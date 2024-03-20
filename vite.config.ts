@@ -38,9 +38,5 @@ export default defineConfig({
       '@models': path.resolve(__dirname, './src/models'),
       '@pages': path.resolve(__dirname, './src/pages'),
     },
-  },
-  server: {
-    host: '0.0.0.0',
-    port: 8084,
-  },
+  }
 })
