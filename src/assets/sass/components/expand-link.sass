@@ -1,0 +1,17 @@
+.expand-link
+    +flex
+    +flex-direction(row)
+    +align-items(center)
+    +font-16-medium
+    color: $accent-color
+
+    .icon
+        transform: rotate(90deg)
+        filter: invert(57%) sepia(33%) saturate(6550%) hue-rotate(149deg) brightness(83%) contrast(102%)
+
+    &:hover
+        cursor: pointer
+
+    &.open
+        .icon
+            transform: rotate(-90deg)

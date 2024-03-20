@@ -1,0 +1,151 @@
+*, html, body
+    +font-16-medium
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+html, body
+    overflow-x: hidden
+    min-height: 100vh
+    overflow-y: overlay
+    &.clipped
+        overflow: hidden
+
+body
+    +scrollable
+    overflow-x: hidden
+
+button,
+input,
+textarea,
+select
+    outline: none
+    border-radius: 0
+    -moz-appearance: none
+    -webkit-appearance: none
+    +prefix(appearance, none)
+
+a
+    text-decoration: none
+    outline: none
+
+.page-wrapper
+    +flex
+    +flex-direction(column)
+    min-height: 100vh
+
+
+.debug
+    border: dashed 1px rgba(240,128,128,0.6)
+
+.container
+    max-width: 1900px
+    margin: 0 auto
+
+.wrapper
+    width: fit-content
+    margin: 0 auto
+
+.basket
+    margin: 0 auto
+    max-width: 1600px
+
+.hidden
+    display: none !important
+    visibility: hidden !important
+    opacity: 0 !important
+
+// font styles class
+.text__h1
+    +font-h1
+
+.text__h2
+    +font-h2
+
+.text__h2-navigation-menu
+    +font-h2_navigation-menu
+
+.text__description
+    +font-description
+
+.text__button-desktop-18
+    +font-button_desktop-18
+
+.text__description-medium
+    +font-description-medium
+
+.text__body-16-mob
+    +font-body_16-mob
+
+.text__price-title
+    +font-price_title
+
+.text__title-popup
+    +font-title_popup
+
+.text__14-medium
+    +font-14-medium
+
+.text__16-link
+    +font-14-medium
+    font-size: 16px !important
+
+.text__body-14-mob
+    +font-14-light
+
+//font color
+.font-color__second
+    color: $font-second-color !important
+
+//buttons style
+.button
+    display: block
+    width: 100%
+    min-width: 208px
+    background: none
+    cursor: pointer
+    text-wrap: nowrap
+    border-radius: 32px
+    border: 2px solid rgba(255,255,255,0)
+    padding: 8px 8px
+
+//animations
+.shake
+    animation: shake 0.3s cubic-bezier(.36,.07,.19,.97) both
+    transform: translate3d(0, 0, 0)
+    backface-visibility: hidden
+    //perspective: 1000
+
+.expand-container
+    overflow: hidden
+    transition: max-height .75s cubic-bezier(0, 1, 0, 1)
+    &.show
+        max-height: 500vh !important
+        transition: max-height 1.25s ease-in-out
+        padding-bottom: 6px
+
+.bordered
+    border: 1px solid $accent-color-second
+    border-radius: 15px
+
+.colored
+    background: $bg-light-color
+
+[class$="__goTop"]
+    cursor: pointer
+
+.copy-text
+    cursor: pointer
+    &:focus
+        animation: blink .5s both
+
+
+@keyframes shake
+    10%, 90%
+        transform: translate3d(-1px, 0, 0)
+    20%, 80%
+        transform: translate3d(2px, 0, 0)
+    30%, 50%, 70%
+        transform: translate3d(-4px, 0, 0)
+    40%, 60%
+        transform: translate3d(4px, 0, 0)

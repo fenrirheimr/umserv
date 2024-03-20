@@ -1,0 +1,63 @@
+.events.content-wrapper
+    +flex
+    +flex-direction(row)
+    width: 100%
+    .content-row
+        +flex
+        +flex-direction(row)
+        +align-items(flex-start)
+        width: 100%
+
+        @include breakpoint(xl)
+            gap: 70px
+        @include breakpoint(xxl)
+            gap: 240px
+
+        &__item
+            +flex
+            +flex-direction(column)
+            width: 100%
+            align-self: stretch
+
+            &.left
+                max-width: 600px
+            &.right
+                max-width: 690px
+                margin-left: auto
+
+            .caption
+                +font-20_bolder
+
+            &-text-wrapper
+                +flex
+                +flex-direction(column)
+
+            .text
+                +font-16-light
+
+            .arrow-link-wrapper
+                margin-top: auto
+
+            .meta
+                +flex
+                +flex-direction(row)
+                +align-items(center)
+                .data
+                    +font-20_bolder
+                    color: $font-second-color
+
+                .tags
+                    +flex
+                    +flex-direction(row)
+                    +align-items(center)
+                    .link
+                        +font-20_bold
+                        &:hover
+                            color: $accent-color
+
+            .image-wrapper
+                border-radius: 15px
+                overflow: hidden
+                img
+                    width: 100%
+

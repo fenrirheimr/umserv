@@ -1,0 +1,11 @@
+include ../components/expand-link
+
+mixin subcategories(data)
+    .subcategories.gy-3.px-3.py-4
+        .subcategories__caption Категория
+        ul.subcategories__list.expand-container.gy-3
+            each item in data
+                li.subcategories__list-item
+                    a(href=item.url)= item.title
+
+        +expand-link('Развернуть все')

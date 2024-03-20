@@ -1,0 +1,9 @@
+.idea
+.vscode/*
+!.vscode/extensions.json
+.git
+**/.nuxt
+**/dist
+**/.output
+**/node_modules
+**/.env

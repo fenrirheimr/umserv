@@ -1,0 +1,43 @@
+include ../components/icon
+
+mixin catalog-item(type, data)
+    if type === "category"
+        a(href=data.url).catalog-item.pa-4.gy-3.category
+            .catalog-item__title= data.title
+            img(src="img/catalog/catalog-"+data.imgId+".png").catalog-item__img
+    if type === "category-extend"
+        .catalog-item.pa-4.gy-3.extended
+            .catalog-item__title= data.title
+            img(src="img/catalog/catalog-"+data.imgId+"-mini.png").catalog-item__img
+            ul.catalog-item__list.gy-3
+                each item in data.items
+                    li.catalog-item__list-item
+                        a(href=item.url)= item.title
+    if type === "product"
+        .catalog-item.pa-4.gy-3.product
+            a(href=data.url).catalog-item__img-wrapper
+                img(src="img/catalog/product-"+data.imgId+".png").catalog-item__img
+            a(href=data.url).catalog-item__title= data.title
+            .catalog-item__vendor-code.copy-text(tabindex=1)= data.vendorСode
+            .catalog-item__price
+                = data.price
+                | &#8381;
+                a(href="#").catalog-item__link
+                    +icon("catalog_item_basket", "48")
+
+    if type === "soft"
+        .catalog-item.pa-4.gy-3.soft
+            a(href=data.url).catalog-item__img-wrapper
+                img(src="img/catalog/soft-" + data.imgId + ".png").catalog-item__img
+            a(href=data.url).catalog-item__title= data.title
+            .catalog-item__price
+                = data.price
+                | &#8381;
+                a(href="#").catalog-item__link
+                    +icon("catalog_item_basket", "48")
+
+    if type === "recent"
+        .catalog-item.pa-4.gy-3.recent
+            a(href=data.url).catalog-item__img-wrapper
+                img(src="img/catalog/product-" + data.imgId + ".png").catalog-item__img
+            a(href=data.url).catalog-item__title= data.title

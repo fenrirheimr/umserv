@@ -1,0 +1,12 @@
+extends ./inner-section
+include ../components/catalog-item
+
+
+block header
+    h2.title Вы смотрели
+
+block content
+    .recent.content-wrapper.gy-5
+        .content-row
+            each item in recentProducts
+                +catalog-item("recent", item)

@@ -1,0 +1,19 @@
+.arrow-link-wrapper
+    +flex
+    +flex-direction(row)
+    +align-items(center)
+    .link
+        +flex
+        +flex-direction(row)
+        +align-items(center)
+        +font-16-medium
+        margin-top: 2px
+        &:hover
+            color: $accent-color
+            .icon
+                filter: invert(57%) sepia(33%) saturate(6550%) hue-rotate(149deg) brightness(83%) contrast(102%)
+
+        &.accent
+            color: $accent-color
+            .icon
+                filter: invert(57%) sepia(33%) saturate(6550%) hue-rotate(149deg) brightness(83%) contrast(102%)

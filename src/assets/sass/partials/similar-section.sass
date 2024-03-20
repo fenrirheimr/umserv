@@ -1,0 +1,55 @@
+.similar.content-wrapper
+    +flex
+    +flex-direction(column)
+    gap: 32px
+    .content-row
+        +flex
+        +flex-direction(row)
+        +align-items(flex-start)
+        +flex-wrap(wrap)
+        width: 100%
+        gap: 7px
+
+        @include breakpoint(xl)
+            max-height: 540px
+
+        @include breakpoint(xxl)
+            max-height: 520px
+
+        &__button-wrapper
+            +flex
+            +flex-direction(row)
+            +align-items(center)
+            +justify-content(center)
+            width: 100%
+
+        &__item
+            +flex
+            +flex-direction(column)
+            gap: 16px
+            max-width: 395px
+            width: 24.5%
+            height: 234px
+            border: 1px solid $stroke-second-color
+            border-radius: 15px
+            overflow: hidden
+            padding: 24px
+            align-self: stretch
+            &:hover
+                background: $hover-gradient
+                box-shadow: 1px 1px 5px 0 rgba(156, 180, 186, 0.83)
+            .caption
+                +font-20_bolder
+
+            .text
+                +font-14-medium
+
+            .arrow-link-wrapper
+                margin-top: auto
+
+            @include breakpoint(xl)
+                max-width: 310px
+
+            @include breakpoint(xxl)
+                max-width: 100%
+

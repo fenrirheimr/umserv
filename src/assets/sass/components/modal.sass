@@ -1,0 +1,95 @@
+.modal-mask
+    +flex-direction(row)
+    +align-items(center)
+    +justify-content(center)
+    position: fixed
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    z-index: 9999
+    width: 100vw !important
+    height: 100vh
+    background-color: rgba(0, 0, 0, 0.5)
+    display: none
+    opacity: 0
+    visibility: hidden
+    .modal
+        +flex
+        +flex-direction(column)
+        width: 604px
+        height: 304px
+        border-radius: 15px
+        padding: 32px
+        position: relative
+        background-color: $white-color
+        background-repeat: no-repeat
+        background-position: 6% 88%, 93% 87%
+        background-image: url('data:image/svg+xml,<svg width="69" height="60" viewBox="0 0 69 60" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23clip0_304_5948)"><path d="M48.6191 2.2474C49.8695 2.24728 51.025 2.91426 51.6504 3.9971L65.516 28.0076C66.1413 29.0904 66.1415 30.4246 65.5163 31.5076L51.6555 55.5208C51.0304 56.6038 49.875 57.271 48.6246 57.2711L20.8981 57.2739C19.6476 57.274 18.4921 56.607 17.8668 55.5242L4.00118 31.5137C3.37585 30.4308 3.37572 29.0967 4.00083 28.0137L17.8617 4.00046C18.4868 2.9175 19.6422 2.25028 20.8926 2.25016L48.6191 2.2474Z" stroke="url(%23paint0_linear_304_5948)" stroke-opacity="0.18" stroke-width="3"/></g><defs><linearGradient id="paint0_linear_304_5948" x1="29.5671" y1="-16" x2="17.4429" y2="51.305" gradientUnits="userSpaceOnUse"><stop stop-color="%2381F8BF"/><stop offset="0.245901" stop-color="%2360F8D6"/><stop offset="0.428554" stop-color="%2345F8EA"/><stop offset="0.551996" stop-color="%233AE5ED"/><stop offset="0.701676" stop-color="%2330D5F1"/><stop offset="0.864851" stop-color="%2319AEFA"/><stop offset="1" stop-color="%230B95FF"/></linearGradient><clipPath id="clip0_304_5948"><rect width="69" height="60" fill="white"/></clipPath></defs></svg>'), url('data:image/svg+xml,<svg width="183" height="101" viewBox="0 0 183 101" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23clip0_304_5945)"><path d="M152.043 1.24542C153.829 1.24525 155.48 2.19808 156.373 3.74499L181.741 47.6729C182.634 49.2198 182.634 51.1258 181.741 52.6729L156.382 96.6059C155.489 98.153 153.839 99.1061 152.052 99.1063L101.326 99.1113C99.5395 99.1115 97.8888 98.1587 96.9954 96.6118L71.6278 52.6839C70.7345 51.1369 70.7343 49.2309 71.6273 47.6839L96.9862 3.75089C97.8792 2.2038 99.5298 1.25064 101.316 1.25046L152.043 1.24542Z" fill="url(%23paint0_linear_304_5945)" fill-opacity="0.18"/><path d="M38.4934 52.498C40.2797 52.4978 41.9304 53.4506 42.8237 54.9975L53.4388 73.3792C54.3321 74.9261 54.3323 76.8321 53.4393 78.3792L42.8279 96.7629C41.9349 98.31 40.2843 99.2632 38.498 99.2633L17.2715 99.2654C15.4852 99.2656 13.8345 98.3128 12.9411 96.7659L2.32607 78.3842C1.43275 76.8373 1.43256 74.9313 2.32557 73.3842L12.937 55.0005C13.83 53.4534 15.4805 52.5002 17.2669 52.5001L38.4934 52.498Z" fill="url(%23paint1_linear_304_5945)" fill-opacity="0.18"/></g><defs><linearGradient id="paint0_linear_304_5945" x1="157.074" y1="-37.8177" x2="101.938" y2="112.623" gradientUnits="userSpaceOnUse"><stop stop-color="%2381F8BF"/><stop offset="0.245901" stop-color="%2360F8D6"/><stop offset="0.428554" stop-color="%2345F8EA"/><stop offset="0.551996" stop-color="%233AE5ED"/><stop offset="0.701676" stop-color="%2330D5F1"/><stop offset="0.864851" stop-color="%2319AEFA"/><stop offset="1" stop-color="%230B95FF"/></linearGradient><linearGradient id="paint1_linear_304_5945" x1="42.4051" y1="33.8305" x2="16.0566" y2="105.723" gradientUnits="userSpaceOnUse"><stop stop-color="%2381F8BF"/><stop offset="0.245901" stop-color="%2360F8D6"/><stop offset="0.428554" stop-color="%2345F8EA"/><stop offset="0.551996" stop-color="%233AE5ED"/><stop offset="0.701676" stop-color="%2330D5F1"/><stop offset="0.864851" stop-color="%2319AEFA"/><stop offset="1" stop-color="%230B95FF"/></linearGradient><clipPath id="clip0_304_5945"><rect width="183" height="101" fill="white"/></clipPath></defs></svg>')
+        &__content
+            +flex
+            +flex-direction(column)
+            gap: 24px
+            height: 100%
+            .caption
+                +font-subtitle3
+            &:not([type=button])
+                .text
+                    +font-14-medium
+        &__close
+            position: absolute
+            top: 16px
+            right: 16px
+            &:hover
+                cursor: pointer
+
+        .form
+            +flex
+            +flex-direction(column)
+            gap: 32px
+            &-fields
+                +flex
+                +flex-direction(row)
+                gap: 16px
+            &-checkbox-wrapper
+                +flex
+                +flex-direction(row)
+                gap: 8px
+                margin-top: 16px
+                .label
+                    +font-14-medium
+                    a
+                        color: $accent-color
+            &__button-wrapper
+                +flex
+                +flex-direction(row)
+                +align-items(center)
+                +justify-content(center)
+                width: 100%
+
+
+    &.from-services
+        .modal
+            width: 806px
+            background-image: none
+            height: auto
+
+
+    &.show-modal
+        +flex
+        opacity: 1
+        visibility: visible
+        .modal
+            animation: tilt-in-fwd-tl 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both
+
+
++keyframes(tilt-in-fwd-tl)
+    0%
+        transform: rotateY(-20deg) rotateX(35deg) translate(-300px, -300px) skew(35deg, -10deg)
+        opacity: 0
+
+    100%
+        transform: rotateY(0) rotateX(0deg) translate(0, 0) skew(0deg, 0deg)
+        opacity: 1
+
+

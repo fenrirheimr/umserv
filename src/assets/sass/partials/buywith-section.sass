@@ -1,0 +1,25 @@
+.buywith.content-wrapper
+    +flex
+    +flex-direction(column)
+
+    .content-row
+        +flex
+        +flex-direction(row)
+        +align-items(flex-start)
+        +flex-wrap(wrap)
+        width: 100%
+        gap: 7px
+
+        @include breakpoint(xl)
+            max-height: 540px
+
+        @include breakpoint(xxl)
+            max-height: 520px
+
+        &__button-wrapper
+            +flex
+            +flex-direction(row)
+            +align-items(center)
+            +justify-content(center)
+            width: 100%
+

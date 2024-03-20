@@ -1,0 +1,23 @@
+extends ./content-section
+include ../components/arrow-link
+include ../components/button
+
+block header
+    h2.title Отрасли
+block extend
+    .extend
+        +arrow-link('#', 'Посмотреть все отрасли')
+block content
+    .industries.content-wrapper.gy-5
+        .content-row.expand-container.gx-3.gy-5
+            each item in industriesData
+                .content-row__item
+                    a(href="#").gy-3
+                        .content-row__item__image-wrapper.pa-4(style="background-image: url('img/ind-" + item.imgId + ".png')")
+                            .caption= item.caption
+                        .content-row__item__text-wrapper= item.text
+
+        .content-row
+            .content-row__button-wrapper
+                +button("button", "Показать все", "outlined expand-button")
+

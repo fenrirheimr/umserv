@@ -1,0 +1,136 @@
+.catalog-item
+    +flex
+    +flex-direction(column)
+    border: 1px solid $stroke-second-color
+    border-radius: 15px
+    overflow: hidden
+    align-self: stretch
+    position: relative
+    width: 100%
+    @include breakpoint(xl)
+        max-width: 250px
+    @include breakpoint(xxl)
+        max-width: 318px
+    &:hover
+        box-shadow: 1px 1px 5px 0 rgba(156, 180, 186, 0.83)
+
+    &__title
+        @include breakpoint(xl)
+            +font-16-medium
+        @include breakpoint(xxl)
+            +font-16-bold
+    &__vendor-code
+        +font-16-medium
+        white-space: nowrap
+        text-overflow: ellipsis
+        overflow: hidden
+    &__price
+        +font-24_bold
+
+    &.category
+        height: 190px
+        &:hover
+            background: $hover-gradient
+        .catalog-item__title
+            max-width: 50%
+        .catalog-item__img
+            position: absolute
+            right: 0
+            bottom: 0
+
+    &.extended
+        height: auto
+        &:hover
+            background: $hover-gradient
+        .catalog-item__title
+            max-width: 100%
+            order: 2
+        .catalog-item__img
+            width: 128px
+            order: 1
+            position: relative
+            margin: 0 auto
+        .catalog-item__list
+            +flex
+            +flex-direction(column)
+            order: 3
+            list-style: none
+
+            a
+                +font-14-medium
+                &:hover
+                    color: $accent-color
+
+    &.soft,
+    &.product,
+    &.recent
+        position: inherit
+        a
+            &:hover
+                color: $accent-color
+
+            @include breakpoint(xl)
+                +font-14-medium
+            @include breakpoint(xxl)
+                +font-16-medium
+
+        .catalog-item__img-wrapper
+            position: relative
+            margin: 0 auto
+            width: 100%
+            height: 280px
+            &:after
+                content: ''
+                display: block
+                border-top: 1px solid $stroke-second-color
+                position: absolute
+                left: -24px
+                right: -24px
+                bottom: 0
+            .catalog-item__img
+                max-width: 100%
+                position: relative
+                z-index: 1
+
+        .catalog-item__price
+            +flex
+            +flex-direction(row)
+            +align-items(center)
+            margin-top: auto
+            height: 48px
+            .catalog-item__link
+                margin-left: auto
+                display: none
+
+        &:hover
+            .catalog-item__link
+                display: block
+
+    &.soft
+        position: relative
+
+        .catalog-item__img-wrapper
+            position: relative
+            margin: 0 auto
+            height: 280px
+            &:before
+                content: ''
+                display: block
+                position: absolute
+                background: $product-background-color
+                top: -24px
+                left: -24px
+                right: -24px
+                bottom: 0
+                z-index: 0
+
+    &.recent
+        position: relative
+
+        .catalog-item__img-wrapper
+            position: relative
+            margin: 0 auto
+            height: 260px
+            &:after
+                display: none
+

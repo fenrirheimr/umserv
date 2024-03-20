@@ -1,0 +1,40 @@
+.services.content-wrapper
+    +flex
+    +flex-direction(column)
+
+    .content-row
+        +flex
+        +flex-direction(row)
+        +align-items(flex-start)
+        +flex-wrap(wrap)
+        width: 100%
+        @include breakpoint(xl)
+            +justify-content(space-between)
+
+        &__item
+            +flex
+            +flex-direction(column)
+            width: 24.26%
+            height: 234px
+            border: 1px solid $stroke-second-color
+            border-radius: 15px
+            overflow: hidden
+            align-self: stretch
+            &:hover
+                background: $hover-gradient
+                box-shadow: 1px 1px 5px 0 rgba(156, 180, 186, 0.83)
+            .caption
+                +font-20_bolder
+
+            .text
+                +font-14-medium
+
+            .arrow-link-wrapper
+                margin-top: auto
+
+            @include breakpoint(xl)
+                max-width: 310px
+
+            @include breakpoint(xxl)
+                max-width: 100%
+

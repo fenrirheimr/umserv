@@ -1,0 +1,78 @@
+.radio-button-container
+    +flex
+    +flex-direction(row)
+    +align-items(center)
+    gap: 16px
+    cursor: pointer
+    .title
+        +flex
+        +font-16-medium
+        order: 1
+    .radio-button-wrapper
+        width: 30px
+        height: 30px
+        order: 2
+        .radio-button
+            display: inline-block
+            position: relative
+            cursor: pointer
+            vertical-align: top
+            width: 30px
+            height: 30px
+            &:before
+                content: ""
+                display: block
+                position: absolute
+                width: 28px
+                height: 28px
+                border-radius: 50%
+                top: 0
+                left: 0
+                border: 1px solid $accent-color
+                background-color: $white-color
+            &:checked:before
+                content: ""
+                display: block
+                position: absolute
+                width: 28px
+                height: 28px
+                top: 0
+                left: 0
+            &:checked:after
+                content: ""
+                display: block
+                width: 10px
+                height: 10px
+                background: $accent-color
+                border-radius: 50%
+                position: absolute
+                top: 50%
+                left: 50%
+                transform: translate(-50%, -50%)
+
+        &.size-16
+            width: 16px
+            height: 16px
+            .radio-button
+                width: 16px
+                height: 16px
+                &:before,
+                &:checked:before
+                    width: 14px
+                    height: 14px
+                &:checked:after
+                    height: 9px
+                    top: 1px
+                    left: 5px
+
+    &.before
+        .title
+            order: 1
+        .radio-button-wrapper
+            order: 2
+
+    &.after
+        .title
+            order: 2
+        .radio-button-wrapper
+            order: 1

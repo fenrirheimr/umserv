@@ -1,0 +1,43 @@
+include ../components/radio-button
+include ../components/button
+include ../components/icon
+
+mixin configuration(type, data)
+    if type === 'short'
+        .configurations.bordered.colored.py-3
+            .configurations__list
+                each item in data
+                    label.configurations__list__item.gx-5.px-5.py-3
+                        .item__sum=item.sum
+                            |&nbsp;&#8381;
+                        +radio-button(item.checked, null, null, 'config-short')
+                        .item__description.gy-3
+                            .text= item.text
+                            .vendor-code= item.vendor
+
+    if type === 'full'
+        .configurations.full.bordered.mb-5
+            .configurations__list.expand-container
+                each item in data
+                    label.configurations__list__item.item.gx-4.pa-5
+                        .item__img
+                            img(src="img/catalog/config-" + item.imgId + ".png")
+                        .item__title=item.title
+                        .item__radio
+                            +radio-button(item.checked, null, null, 'config-full')
+                        .item__description.gy-3
+                            .text= item.text
+                            .vendor-code.copy-text(tabindex="1")= item.vendor
+                        .item__sum=item.sum
+                            | &nbsp;&#8381;
+                        .item__actions.gy-3
+                            +button("button", "В корзину")
+                            .btn_wrapper.gx-2
+                                a(href="#").mr-2 хочу на тест
+                                a(href="#")
+                                    +icon("favorites", "24")
+                                a(href="#")
+                                    +icon("compare", "24")
+
+        +button("button", "Показать все", "expand-button")
+

@@ -1,0 +1,113 @@
+.root-button
+
+    $linear-gradient: linear-gradient(89.45deg, #04D0DD 7.13%, #51D9F5 59.2%, #A6FAFF 72.81%, #35DAE4 83.1%, #04D0DD 109.14%)
+    $linear-gradient-hover: linear-gradient(267.23deg, #56F8DF -10.6%, #60F8D6 24.57%, #45F8EA 50.7%, #3AE5ED 68.36%, #06D1DE 89.77%)
+    $animation: gradient 2s linear infinite
+
+    +flex
+    +flex-direction(row)
+    +align-items(center)
+    +justify-content(center)
+    max-width: 100%
+
+    +keyframes(gradient)
+        0%
+            background-position: 150% 0
+        100%
+            background-position: 0 0
+
+    button
+        text-align: center
+        color: $white-color !important
+        height: 36px
+        background: $linear-gradient
+        background-size: 200% 200%
+        animation: $animation
+        cursor: pointer
+        border-radius: 33px
+        border: 2px solid transparent
+        .text
+            width: 100%
+            color: $white-color !important
+            white-space: nowrap
+        &:disabled
+            opacity: .4
+            cursor: not-allowed
+            animation: none
+        &:active,
+        &:focus
+            border: 2px solid $button-border-color
+        &:hover:enabled
+                color: $white-color
+                background: $linear-gradient-hover
+
+        &.full-width
+            width: 100%
+        &.outlined
+            background: $white-color
+            border: 2px solid $button-border-color
+            .text
+                background: linear-gradient(267deg, #19AFB9 -28.16%, #06D1DE 132.4%)
+                -webkit-background-clip: text
+                -webkit-text-fill-color: transparent
+            &:hover
+                background: $linear-gradient-hover
+                border-color: transparent
+                .text
+                    -webkit-text-fill-color: initial
+            &:active,
+            &:focus
+                border: 2px solid $button-border-color !important
+
+
+    @include breakpoint(xs)  //320px
+        button
+            +font-14-bold
+            width: 100%
+
+    @include breakpoint(sm)  //720px
+        button
+            +font-14-bold
+            width: 100%
+
+    @include breakpoint(md)  //768px
+        button
+            +font-14-bold
+            width: 100%
+
+    @include breakpoint(lg)  //1024px
+        button
+            +font-14-bold
+            padding: 0 64px
+            width: fit-content
+
+    @include breakpoint(xl)  //1440px
+        button
+            +font-18-bold
+            width: fit-content
+            height: 46px
+            line-height: 23px
+            letter-spacing: 0.03em
+
+    @include breakpoint(xxl)  //1920px
+        button
+            width: fit-content
+            height: 46px
+            line-height: 23px
+            letter-spacing: 0.03em
+
+            .text
+                +font-18-bold
+
+            &.medium
+                padding: 0 50px !important
+                width: fit-content
+                height: 40px
+
+    @media (prefers-color-scheme: light)
+
+    @media (prefers-color-scheme: dark)
+
+
+
+

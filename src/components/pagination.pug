@@ -1,0 +1,14 @@
+include ./icon
+mixin pagination
+    nav.pagination-container.gx-2
+        //button#prev-button.pagination-button
+            | &lt;
+        .pagination.gx-5
+            a(href="#").pagination__link 1
+            a(href="#").pagination__link 2
+            a(href="#").pagination__link 3
+            .pagination__.dots ...
+            a(href="#").pagination__link 10
+        .pagination-button.next-button
+            +icon("arrow", "24")
+

@@ -1,0 +1,106 @@
+.sidebar-filters
+    +flex
+    +flex-direction(column)
+    width: 100%
+    border: 1px solid $stroke-second-color
+    border-radius: 15px
+    overflow: hidden
+    position: relative
+
+    &__caption
+        +font-16-bold
+
+    &__list
+        +flex
+        +flex-direction(column)
+        list-style: none
+        max-height: 160px
+        overflow: hidden
+
+        &.show
+            max-height: 100%
+
+        a
+            +font-14-medium
+            &:hover
+                color: $accent-color
+
+        &__checkbox-wrapper
+            +flex
+            +flex-direction(row)
+
+            .label
+                +flex
+                +flex-direction(row)
+                +font-14-medium
+
+    .form
+        +flex
+        +flex-direction(column)
+
+        .root-button button
+            min-width: 100%
+        &-fields
+            +flex
+            +flex-direction(row)
+
+            .input-fields-wrapper
+                width: 100%
+                border-color: $stroke-second-color
+        &-checkbox-wrapper
+            +flex
+            +flex-direction(row)
+            gap: 8px
+            margin-top: 16px
+            .label
+                +font-14-medium
+                a
+                    color: $accent-color
+        &__button-wrapper
+            +flex
+            +flex-direction(row)
+            +align-items(center)
+            +justify-content(center)
+            width: 100%
+
+        .multi-range
+            position: relative
+            height: 50px
+
+            input[type=range]
+                box-sizing: border-box
+                appearance: none
+                width: 100%
+                margin: 0
+                overflow: hidden
+                border: 0
+                border-radius: 1px
+                outline: none
+                background: linear-gradient($accent-color, $accent-color) no-repeat center
+                background-size: 100% 2px
+                pointer-events: none
+                position: absolute
+
+                &:active,
+                &:focus
+                    outline: none
+
+                &::-webkit-slider-thumb
+                    height: 16px
+                    width: 16px
+                    border-radius: 16px
+                    background-color: $accent-color
+                    position: relative
+                    margin: 5px 0
+
+                    cursor: pointer
+                    appearance: none
+                    pointer-events: all
+                    &::before
+                        content: ' '
+                        display: block
+                        position: absolute
+                        top: 13px
+                        left: 100%
+                        width: 2000px
+                        height: 2px

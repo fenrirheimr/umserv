@@ -1,0 +1,27 @@
+.tags
+    +flex
+    +flex-direction(row)
+    +align-items(center)
+    +flex-wrap(wrap)
+    max-width: 100%
+    .tag
+        +font-16-medium
+        padding: 10px 12px
+        border: 1px solid $stroke-second-color
+        border-radius: 27px
+        cursor: pointer
+        white-space: nowrap
+        min-width: 44px
+        text-align: center
+        &.isActive
+            border-color: $tag-active-border-color
+            background: $bg-light-color
+        &:hover
+            border-color: $accent-color
+            background: $active-color
+
+        &.disabled
+            border: 1px solid $stroke-second-color
+            color: $stroke-second-color
+            cursor: default
+            pointer-events: none

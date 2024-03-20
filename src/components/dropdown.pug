@@ -1,0 +1,7 @@
+mixin dropdown(className, data)
+    .dropdown
+        button(type='button').dropdown__button.bordered По возрастанию цены
+        ul.dropdown__list
+            li.dropdown__list-item(data-value="По возрастанию цены") По возрастанию цены
+            li.dropdown__list-item.dropdown__list-item_active(data-value="По убыванию цены") По убыванию цены
+        input(type="text" name="select-category" value="").dropdown__input_hidden

@@ -1,0 +1,5 @@
+mixin checkbox(checked, className, size, title, position)
+    label.checkbox-container.gx-2(class=position)
+            .title= title
+            .checkbox-wrapper(class=className+" size-"+size)
+                input.checkbox(type="checkbox" checked=checked)

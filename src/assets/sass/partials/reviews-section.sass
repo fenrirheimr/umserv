@@ -1,0 +1,246 @@
+.reviews.content-wrapper
+    +flex
+    +flex-direction(column)
+    gap: 32px
+    width: 100%
+    .content-row
+        +flex
+        +flex-direction(row)
+        +align-items(flex-start)
+        width: 100%
+        gap: 318px
+
+        .reviews-two-columns-layout
+            &__left,
+            &__right
+                +flex
+                +flex-direction(row)
+                max-width: 968px
+
+            &__right
+                width: 100%
+                max-width: 317px
+
+                @include breakpoint(xl)
+                    max-width: 250px
+                @include breakpoint(xxl)
+                    max-width: 318px
+
+        .slider
+            +flex
+            +flex-direction(row)
+            +align-items(flex-start)
+            gap: 8px
+            width: 986px
+            max-width: 100%
+            margin: 0 auto
+            position: relative
+            height: 100%
+            &__wrapper
+                overflow: hidden
+                position: relative
+                z-index: 1
+                height: 100%
+            &__items
+                +flex
+                +flex-direction(row)
+                gap: 8px
+                width: 10000%
+                position: relative
+                top: 0
+                height: 100%
+                &.shifting
+                    transition: left .2s ease-out
+
+            &__item
+                +flex
+                +flex-direction(column)
+                gap: 16px
+                border-radius: 15px
+                width: 480px !important
+                height: 307px
+                cursor: pointer
+                transition: all .3s
+                position: relative
+
+                &__header
+                    +flex
+                    +flex-direction(row)
+                    +align-items(flex-end)
+                    gap: 16px
+
+                    .name
+                        +font-24_bold
+                    .date
+                        +font-16-medium
+                    .rating
+                        +flex
+                        +flex-direction(row)
+                        +align-items(center)
+                        +font-16-medium
+                        gap: 8px
+                        margin-left: auto
+
+                &__content
+                    +font-16-light
+
+                &__actions
+                    +flex
+                    +flex-direction(row)
+                    +align-items(center)
+                    margin-left: auto
+
+                    .reaction
+                        +flex
+                        +flex-direction(row)
+                        +align-items(center)
+                        +font-16-medium
+                        color: $accent-color
+                        gap: 8px
+
+        .control
+            position: absolute
+            top: 50%
+            width: 37px
+            height: 37px
+            background: #fff
+            border: 1px solid $stroke-second-color
+            border-radius: 20px
+            margin-top: -20px
+            z-index: 2
+            &.prev, &.next
+                background-position: 50%
+                background-repeat: no-repeat
+                cursor: pointer
+                background-size: auto
+                &:active
+                    transform: scale(0.8)
+
+            &.prev
+                left: -19px
+                background-position-x: 40%
+                background-image: url('data:image/svg+xml,<svg width="10" height="17" viewBox="0 0 10 17" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23clip0_574_2399)"><path d="M8.92893 1.71067L1.85786 8.78174L8.92893 15.8528" stroke="%23141212" stroke-linecap="round"/></g><defs><clipPath id="clip0_574_2399"><rect width="16.106" height="10" fill="white" transform="matrix(4.34238e-08 -1 -1 -4.40009e-08 10 16.7817)"/></clipPath></defs></svg>')
+
+            &.next
+                right: -19px
+                background-image: url('data:image/svg+xml,<svg width="10" height="17" viewBox="0 0 10 17" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23clip0_574_2509)"><path d="M1.07107 1.71067L8.14214 8.78174L1.07107 15.8528" stroke="%23141212" stroke-linecap="round"/></g><defs><clipPath id="clip0_574_2509"><rect width="16.106" height="10" fill="white" transform="translate(0 16.7817) rotate(-90)"/></clipPath></defs></svg>')
+
+        .add-reviews-wrapper
+            +flex
+            +flex-direction(column)
+            +align-items(flex-start)
+            width: 100%
+
+            &__caption
+                +flex
+                +flex-direction(row)
+                +align-items(center)
+                width: 100%
+
+                .values
+                    +font-20-medium
+                    .current
+                        +font-30-bold
+                .star-container
+                    +flex
+                    +flex-direction(row-reverse)
+                    +align-items(center)
+
+                    margin-left: auto
+
+                    .star
+                        position: relative
+                        &:before
+                            content: ""
+                            background-image: url('data:image/svg+xml,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.0689 3.37685C11.4007 2.52985 12.5993 2.52985 12.9311 3.37685L14.5663 7.55101C14.7085 7.91413 15.0489 8.16143 15.4382 8.1845L19.9134 8.44977C20.8214 8.50359 21.1918 9.64353 20.4888 10.2208L17.0243 13.0659C16.7229 13.3134 16.5929 13.7135 16.6912 14.0909L17.8218 18.429C18.0513 19.3092 17.0816 20.0138 16.3153 19.5236L12.5389 17.1077C12.2104 16.8976 11.7896 16.8976 11.4611 17.1077L7.68472 19.5236C6.91843 20.0138 5.94874 19.3092 6.17816 18.429L7.30878 14.0909C7.40714 13.7135 7.27712 13.3134 6.97573 13.0659L3.51117 10.2208C2.80816 9.64353 3.17855 8.50359 4.08663 8.44977L8.56178 8.1845C8.95109 8.16143 9.29147 7.91413 9.43372 7.55101L11.0689 3.37685Z" fill="%23D5D5D5"/></svg>')
+                            width: 24px
+                            height: 24px
+                            position: relative
+                            display: block
+
+                        &:after
+                            content: ""
+                            background-image: url('data:image/svg+xml,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.0689 3.37685C11.4007 2.52985 12.5993 2.52985 12.9311 3.37685L14.5663 7.55101C14.7085 7.91413 15.0489 8.16143 15.4382 8.1845L19.9134 8.44977C20.8214 8.50359 21.1918 9.64353 20.4888 10.2208L17.0243 13.0659C16.7229 13.3134 16.5929 13.7135 16.6912 14.0909L17.8218 18.429C18.0513 19.3092 17.0816 20.0138 16.3153 19.5236L12.5389 17.1077C12.2104 16.8976 11.7896 16.8976 11.4611 17.1077L7.68472 19.5236C6.91843 20.0138 5.94874 19.3092 6.17816 18.429L7.30878 14.0909C7.40714 13.7135 7.27712 13.3134 6.97573 13.0659L3.51117 10.2208C2.80816 9.64353 3.17855 8.50359 4.08663 8.44977L8.56178 8.1845C8.95109 8.16143 9.29147 7.91413 9.43372 7.55101L11.0689 3.37685Z" fill="%230099A3"/></svg>')
+                            width: 24px
+                            height: 24px
+                            position: absolute
+                            top: 0
+                            display: block
+                            opacity: 0
+
+                        &:hover
+                            &:after, ~ .star:after
+                                opacity: 1
+
+                        &.star__checked
+                            &:after, ~ .star:after
+                                opacity: 1
+
+            &__photos
+                .title
+                    +font-16-medium
+                .photos
+                    .product-gallery
+                        +flex
+                        +flex-direction(column)
+                        gap: 16px
+
+                        .thumbs-wrapper
+                            +flex
+                            +flex-direction(row)
+                            +flex-wrap(wrap)
+                            width: 100%
+
+                            .thumb-img-item
+                                display: none
+                                cursor: pointer
+                                width: 95px
+                                height: 95px
+                                position: relative
+                                border-radius: 5px
+                                overflow: hidden
+                                &.visible
+                                    display: block
+                                &.show-button
+                                    display: block
+                                    &:before
+                                        content: ' '
+                                        display: block
+                                        position: absolute
+                                        z-index: 1
+                                        top: 0
+                                        right: 0
+                                        bottom: 0
+                                        left: 0
+                                        background: rgba(0,0,0,.5)
+
+                                    .text
+                                        +flex
+                                        +flex-direction(row)
+                                        +align-items(center)
+                                        +justify-content(center)
+                                        +font-30_bold
+                                        color: $white-color
+                                        position: absolute
+                                        z-index: 1
+                                        top: 0
+                                        right: 0
+                                        bottom: 0
+                                        left: 0
+
+
+                                .text
+                                    display: none
+                                .thumb-img
+                                    width: 95px
+                                    height: 95px
+                                    &:hover
+                                        filter: none
+
+            &__button
+                width: 100%
+                .root-button
+                    width: 100%
+                    .add-review
+                        width: 100%
+

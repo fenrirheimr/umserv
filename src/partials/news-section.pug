@@ -1,0 +1,62 @@
+extends ./inner-section
+include ../components/arrow-link
+include ../components/button-arrow-link
+include ../components/tags
+
+block header
+    h2.title Новости и статьи
+
+    .extend
+        +arrow-link('#', 'Смотреть все')
+
+block content
+    .news.content-wrapper.gy-5
+        +tags([{"title": "Chainway"}, {"title": "ТСД"}, {"title": "Ритейл маркировка"}])
+
+        .content-row.news-two-columns-layout.gx-7
+            .news-two-columns-layout__left
+                .slider.news-slider.gx-2
+                    .slider__wrapper
+                        .slider__items.pb-1.gx-2
+                            each n in [1,2,3]
+                                .slider__item.pa-4.gy-3
+                                    a(href="").img__wrapper
+                                        img(src="img/news-1.png").catalog-item__img
+
+                                    a(href="").news__caption Топ-5 программ для ТСД
+
+                                    .meta
+                                        .icons-wrapper.gx-3
+                                            .icon-item.gx-1
+                                                +icon("time", "24")
+                                                | 5
+                                            .icon-item.gx-1
+                                                +icon("eye", "24")
+                                                | 5
+                                        .date 12.03.23
+
+
+            .news-two-columns-layout__right
+                .subscribe-wrapper.pa-7.colored.bordered
+                    .caption.mb-5 Будьте в курсе полезных новостей и актуальных событий
+
+                    .subscribe-form
+                        form.form(method="" action="")
+                            .form-fields-wrapper.gx-3.mb-3
+                                .inner
+                                    +input-field("email", 'Email')
+                                    button.button-submit(type="submit")
+                                a(href="#")
+                                    +icon("telegram-outline", "48")
+                            .form-checkbox-wrapper
+                                +checkbox(true)
+                                .label
+                                    | Я соглашаюсь с
+                                    a(href="#") офертой
+                                    |
+                                    | и
+                                    |
+                                    a(href="#") условиями обработки персональных данных
+
+
+

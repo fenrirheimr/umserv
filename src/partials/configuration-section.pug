@@ -1,0 +1,80 @@
+extends ./inner-section
+include ../components/button-arrow-link
+include ../components/configurations
+include ../components/checkbox
+include ../components/dropdown
+include ../components/input-field
+include ../components/tags
+include ../components/radio-button
+
+block header
+    h2.title Конфигурации
+
+block content
+    .configuration-section.content-wrapper.gy-5
+        .content-row
+            .configurations-filters.bordered.pa-7.gy-5
+                .configurations-filters__cell
+                    .configurations-filters__cell__title.mb-5 Версия ОС
+                    .configurations-filters__cell__content
+                        +tags([{"title": "Android 9"}, {"title": "Android 1"}])
+
+                .configurations-filters__cell
+                    .configurations-filters__cell__title.mb-5 Тип соединения
+                    .configurations-filters__cell__content
+                         +tags([{ "title": "Bluetooth" }, { "title": "Wi-fi" }])
+
+                .configurations-filters__cell
+                    .configurations-filters__cell__title.mb-5 Память
+                    .configurations-filters__cell__content
+                         +tags([{ "title": "3ГБ/32ГБ" }, { "title": "4ГБ/64ГБ" }])
+
+                .configurations-filters__cell
+                    .configurations-filters__cell__title.mb-5 NFC
+                    .configurations-filters__cell__content
+                        +radio-button(true, null, null, 'nfc', 'Да', 'after')
+                        +radio-button(false, null, null, 'nfc', 'Нет', 'after')
+
+                .configurations-filters__cell
+                    .configurations-filters__cell__title.mb-5 Сканирующий модуль
+                    .configurations-filters__cell__content
+                        +tags([{ "title": "SE4710" }, { "title": "SE4750SR" }, { "title": "SE4850", "className": "disabled"}])
+
+                .configurations-filters__cell
+                    .configurations-filters__cell__title.mb-5 Клавиатура
+                    .configurations-filters__cell__content
+                        +tags([{ "title": "27" }, { "title": "37" }, { "title": "47"}])
+
+                .configurations-filters__cell
+                    .configurations-filters__cell__title.mb-5 UHF RFID
+                    .configurations-filters__cell__content
+                        +radio-button(true, null, null, 'UHF-RFID', 'Да', 'after')
+                        +radio-button(false, null, null, 'UHF-RFID', 'Нет', 'after')
+
+                .configurations-filters__cell
+                    .configurations-filters__cell__title.mb-5 UHF 4G
+                    .configurations-filters__cell__content
+                        +radio-button(true, null, null, '4G', 'Да', 'after')
+                        +radio-button(false, null, null, '4G', 'Нет', 'after')
+
+        .content-row
+            .config-two-columns.mb-5
+                .config-two-columns__column-left.gx-3
+                    .config__checkbox-wrapper.bordered
+                        +checkbox(false, null, null, "В наличии")
+                    +dropdown()
+                .config-two-columns__column-right
+                    .price-range.range-wrapper.bordered.px-4.py-8.gx-4
+                        .caption Диапазон цены
+
+                        .multi-range
+                            .range-wrap
+                                input#lower(type='range', min='0', max='999')
+                                #minV.range-value.bordered
+                            .range-wrap
+                                input#upper(type='range', min='1', max='1000')
+                                #maxV.range-value.bordered
+
+        .content-row.expand-wrapper
+            +configuration('full', configFullData)
+

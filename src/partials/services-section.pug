@@ -1,0 +1,15 @@
+extends ./content-section
+include ../components/button-arrow-link
+
+block header
+    h2.title Что мы предлагаем
+
+block content
+    .services.content-wrapper
+        .content-row.gx-3.gy-5
+            each item in servicesData
+                a(href="#").content-row__item.gy-3.pa-4
+                    .caption= item.caption
+                    .text= item.text
+                    +button-arrow-link(item.link.title)
+

@@ -1,0 +1,5 @@
+mixin radio-button(checked, className, size, name, title, position)
+    label.radio-button-container(class=position)
+        .title= title
+        .radio-button-wrapper(class=className + " size-" + size)
+            input.radio-button(type="radio" checked=checked name=name)

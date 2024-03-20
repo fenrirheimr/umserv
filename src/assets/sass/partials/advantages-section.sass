@@ -1,0 +1,25 @@
+.advantages.content-wrapper
+    +flex
+    +flex-direction(column)
+    .content-row
+        +flex
+        +flex-direction(row)
+        +align-items(flex-start)
+        +flex-wrap(nowrap)
+        width: 100%
+
+        &__item
+            +flex
+            +flex-direction(column)
+            max-width: 360px
+            overflow: hidden
+            align-self: stretch
+            .caption
+                +font-16_bold
+
+            .text
+                +font-14-medium
+
+            .arrow-link-wrapper
+                margin-top: auto
+

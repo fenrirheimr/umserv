@@ -1,0 +1,13 @@
+include ../components/icon
+
+.modal-mask.from-promo
+    .modal
+        .modal__content
+            block header
+                .modal__close
+                    +icon("close", "16")
+                .caption Заявка принята
+
+            block content
+                span.text В ближайшее время с Вами свяжется наш специалист.
+                    br/ Благодарим за обращение и желаем хорошего дня!

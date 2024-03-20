@@ -1,0 +1,39 @@
+.input-fields-wrapper
+    +flex
+    +flex-direction(row)
+    +align-items(center)
+    background: $white-color
+    height: 48px
+    border-radius: 10px
+    border: 1px solid $accent-color
+    &.error
+        border-color: $alert-color
+
+    .input-field
+        +font-description-medium
+        width: 100%
+        border: 0
+        outline: none
+        color: $font-primary-color
+        +placeholder
+            +font-description-medium
+            color: $accent-color
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button
+            -webkit-appearance: none
+            margin: 0
+        &[type=number]
+            -moz-appearance: textfield
+
+    &.small
+        padding: 6px 16px !important
+        height: 32px
+        border-radius: 5px
+        .input-field
+            +font-14-medium
+            color: $font-primary-color
+            line-height: 20px
+            +placeholder
+                +font-14-medium
+                color: $accent-color

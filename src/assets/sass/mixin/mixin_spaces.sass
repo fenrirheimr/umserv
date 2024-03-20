@@ -1,0 +1,97 @@
+//padding, margin gap vars
+@import ../var/index
+
+$spacer: 16
+$zero: 0px
+$one: unquote( ( $spacer * 0.25  ) + 'px' )
+$two: unquote( ( $spacer * 0.5  ) + 'px' )
+$three: unquote( ( $spacer ) + 'px' )
+$four: unquote( ( $spacer * 1.5 ) + 'px' )
+$five: unquote( ( $spacer * 2 ) + 'px' )
+$six: unquote( ( $spacer * 2.5 ) + 'px' )
+$seven: unquote( ( $spacer * 3 ) + 'px' )
+$eight: unquote( ( $spacer * 3.5 ) + 'px' )
+$nine: unquote( ( $spacer * 4 ) + 'px' )
+$ten: unquote( ( $spacer * 4.5 ) + 'px' )
+
+
+$spaces: ($zero, $one, $two, $three, $four, $five, $six, $seven, $eight, $nine, $ten)
+$sides: (x, y, all, top, bottom, left, right)
+$i: 0
+@each $space in $spaces
+    @each $side in $sides
+        @if $side == all
+            .pa-#{$i}
+                @include breakpoint(xl)
+                    padding: #{calc($space / 1.5)} !important
+
+                @include breakpoint(xxl)
+                    padding: #{$space} !important
+
+        @else if $side == x
+            .px-#{$i}
+                @include breakpoint(xl)
+                    padding-left: #{calc($space / 1.5)} !important
+                    padding-right: #{calc($space / 1.5)} !important
+
+                @include breakpoint(xxl)
+                    padding-left: #{$space} !important
+                    padding-right: #{$space} !important
+        @else if $side == y
+            .py-#{$i}
+                @include breakpoint(xl)
+                    padding-top: #{calc($space / 1.5)} !important
+                    padding-bottom: #{calc($space / 1.5)} !important
+
+                @include breakpoint(xxl)
+                    padding-top: #{$space} !important
+                    padding-bottom: #{$space} !important
+        @else
+            .p#{str-slice($side, 0, 1)}-#{$i}
+                @include breakpoint(xl)
+                    padding-#{$side}: #{calc($space / 1.5)} !important
+                @include breakpoint(xxl)
+                    padding-#{$side}: #{$space} !important
+
+    @each $side in $sides
+        @if $side == all
+            .ma-#{$i}
+                margin: #{$space} !important
+
+        @else if $side == x
+            .mx-#{$i}
+                margin-left: #{$space} !important
+                margin-right: #{$space} !important
+
+        @else if $side == y
+            .my-#{$i}
+                margin-top: #{$space} !important
+                margin-bottom: #{$space} !important
+
+        @else
+            .m#{str-slice($side, 0, 1)}-#{$i}
+                margin-#{$side}: #{$space} !important
+
+    @each $side in $sides
+        @if $side == all
+            .ga-#{$i}
+                gap: #{$space} !important
+
+        @else if $side == x
+            .gx-#{$i}
+                @include breakpoint(xl)
+                    column-gap: #{calc($space / 1.5)} !important
+
+                @include breakpoint(xxl)
+                    column-gap: #{$space} !important
+
+        @else if $side == y
+            .gy-#{$i}
+                @include breakpoint(xl)
+                    row-gap: #{calc($space / 1.5)} !important
+
+                @include breakpoint(xxl)
+                    row-gap: #{$space} !important
+
+    $i: $i + 1
+

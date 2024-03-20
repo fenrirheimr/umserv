@@ -1,0 +1,20 @@
+- const dataSubHeader = [{"title":"Оборудование","link":"catalog.html"},{"title":"Отраслевые решения","link":"catalog.html"},{"title":"Сервис и ремонт","link":"catalog.html"},{"title":"Компания","link":"catalog.html"},{"title":"Медиацентр","link":"catalog.html"}]
+
+include ../components/input-field
+include ../components/icon
+
+section.header-sub
+    .header-sub-wrapper
+        .header-sub-container
+            .header-sub-content
+                nav.header-sub-content__nav
+                    ul.header-sub-content__nav__items.gx-9
+                        each item in dataSubHeader
+                            li.header-sub-content__nav__item
+                                a.header-sub-content__nav__item__link(href=item.link)= item.title
+
+                .header-sub-content__search
+                    form.form(method="" action="")
+                        +input-field('text', 'Поиск', 'small')
+                        button.search__button
+                            +icon('search', '16')

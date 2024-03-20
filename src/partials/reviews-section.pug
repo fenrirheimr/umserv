@@ -1,0 +1,53 @@
+extends ./inner-section
+include ../components/icon
+include ../components/button
+
+block header
+    h2.title Отзывы
+
+block content
+    .reviews.content-wrapper
+        .content-row.reviews-two-columns-layout
+            .reviews-two-columns-layout__left
+                .slider.reviews-slider
+                    .slider__wrapper
+                        .slider__items
+                            each n in [1,2]
+                                .slider__item.colored.pa-5
+                                    .slider__item__header
+                                        .name Анатолий
+                                        .date 23.05.2023
+                                        .rating
+                                            +icon('star-active', '24')
+                                            | 5
+                                    .slider__item__content
+                                        | Сканер CipherLab RK25 AK2572LNNEUG1 незаменим в работе, где приходится часто проводить каталогизацию и сверку товара! Пользоваться достаточно просто. Отмечу отличную ударопрочность, как и само качество сканера.
+
+                                    .slider__item__actions.mt-3.ga-3
+                                        .reaction
+                                            +icon('like', '24')
+                                            | 5
+                                        .reaction
+                                            +icon('dislike', '24')
+                                            | 5
+
+            .reviews-two-columns-layout__right
+                .add-reviews-wrapper.gy-3
+                    .add-reviews-wrapper__caption
+                        .values.mb-2
+                            span.current.mr-3 4.5
+                            | из 5
+                        .star-container
+                            each n in [1,2,3,4,5]
+                                .star
+                    .add-reviews-wrapper__photos
+                        .title.mb-3 Фото покупателей
+                        .photos
+                            .product-gallery(data-counter="2")
+                                .thumbs-wrapper.ga-3
+                                    each n in [1,2,3,4]
+                                        .thumb-img-item
+                                            img(src="img/full-img-2.png").thumb-img
+                    .add-reviews-wrapper__button.mt-7
+                        +button("button", "Оставить отзыв", "add-review")
+

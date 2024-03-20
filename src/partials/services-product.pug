@@ -1,0 +1,53 @@
+extends ./inner-section
+include ../components/arrow-link
+include ../components/button
+include ../components/tags
+
+block header
+    h2.title Услуги
+block extend
+    .extend
+        +arrow-link('#', 'Все услуги')
+block content
+    .services-product.content-wrapper
+        .content-row.expand-container
+            .services-product__item.bordered.pa-7.gx-5
+                .services-product__img
+                    img(src="img/catalog/soft-01.png")
+                .services-product__description.gy-3
+                    .title Сервисный пакет
+                    .text Комплекс услуг включающий в себя диагностику, ремонт, перепрошивку ПО
+
+                    +button("button", "Смотреть", "medium outlined")
+
+            .services-product__item.bordered.pa-7.gx-5
+                .services-product__img
+                    img(src="img/catalog/soft-01.png")
+                .services-product__description.gy-3
+                    .title Сервисный пакет
+                    .text Комплекс услуг включающий в себя диагностику, ремонт, перепрошивку ПО
+
+                    +button("button", "Смотреть", "medium outlined")
+
+            .services-product__item.bordered.pa-7.gx-5
+                .services-product__img
+                    img(src="img/catalog/soft-01.png")
+                .services-product__description.gy-3
+                    .title Сервисный пакет
+                    .text Комплекс услуг включающий в себя диагностику, ремонт, перепрошивку ПО
+
+                    +button("button", "Смотреть", "medium outlined")
+
+            .services-product__item.bordered.pa-7.gx-5
+                .services-product__img
+                    img(src="img/catalog/soft-01.png")
+                .services-product__description.gy-3
+                    .title Сервисный пакет
+                    .text Комплекс услуг включающий в себя диагностику, ремонт, перепрошивку ПО
+
+                    +button("button", "Смотреть", "medium outlined")
+
+        .content-row
+            .content-row__button-wrapper
+                +button("button", "Показать все", "expand-button")
+

@@ -1,0 +1,523 @@
+.product-page
+    background: $white-color
+
+    .product-card__wrapper
+        +flex
+        +flex-direction(column)
+
+        @include breakpoint(xl)
+            margin: 0 80px
+
+        @include breakpoint(xxl)
+            margin: 0 150px
+
+        .product-card
+            +flex
+            +flex-direction(row)
+            +align-items(stretch)
+
+            & > div
+                width: 100%
+            &__gallery-wrapper
+                +flex
+                max-width: 674px
+                .product-gallery
+                    +flex
+                    +flex-direction(column)
+                    width: 674px
+                    height: 643px
+
+                    &.fixed
+                        position: fixed
+                        top: 0
+                        z-index: 1000
+                        animation: smoothSticky 1s forwards
+
+                    &.toBottom
+                        position: relative !important
+                        align-self: flex-end
+                        height: auto
+
+                    .large-img_wrapper
+                        height: 531px
+                        .large-img
+                            max-width: 100%
+                            max-height: 100%
+                            display: block
+                            margin: 0 auto
+                            &.focus
+                                animation: blink .5s both
+
+                    .thumbs-wrapper
+                        +flex
+                        +flex-direction(row)
+                        +flex-wrap(wrap)
+                        width: 100%
+
+                        .thumb-img-item
+                            display: none
+                            cursor: pointer
+                            width: 80px
+                            height: 80px
+                            position: relative
+                            border-radius: 5px
+                            overflow: hidden
+                            &.visible
+                                display: block
+                            &.show-button
+                                display: block
+                                &:before
+                                    content: ' '
+                                    display: block
+                                    position: absolute
+                                    z-index: 1
+                                    top: 0
+                                    right: 0
+                                    bottom: 0
+                                    left: 0
+                                    background: rgba(0,0,0,.5)
+
+                                .text
+                                    +flex
+                                    +flex-direction(row)
+                                    +align-items(center)
+                                    +justify-content(center)
+                                    +font-30_bold
+                                    color: $white-color
+                                    position: absolute
+                                    z-index: 1
+                                    top: 0
+                                    right: 0
+                                    bottom: 0
+                                    left: 0
+
+
+                            .text
+                                display: none
+                            .thumb-img
+                                width: 80px
+                                height: 80px
+                                filter: grayscale(100%)
+                                &:hover
+                                    filter: none
+
+
+            &__description-wrapper
+                //background: #9A9A9A
+
+            .product
+                +flex
+                +flex-direction(column)
+                &-title-wrapper
+                    +flex
+                    +flex-direction(row)
+
+                &-title
+                    +font-30_bold
+                    line-height: 44px
+
+                .services-buttons
+                    +flex
+                    +flex-direction(row)
+                    +align-items(center)
+                    margin-left: auto
+
+                    &__button
+                        position: relative
+                        .icon
+                            cursor: pointer
+
+                    .popup-container
+                        +flex
+                        +flex-direction(column)
+                        background: $white-color
+                        position: absolute
+                        top: 100%
+                        left: 50%
+                        z-index: 998
+                        border-radius: 15px
+                        width: 260px
+                        animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both
+
+                        box-shadow: 1px 1px 5px 0 rgb(156 180 186 / 83%)
+
+                        .item
+                            +flex
+                            +flex-direction(row)
+                            +align-items(center)
+                            cursor: pointer
+
+                &-meta
+                    +flex
+                    +flex-direction(row)
+                    +align-items(center)
+
+                    &__vendor-code
+                        +font-16-light
+                        .code
+                            color: $accent-color
+
+                    &__raiting
+                        +flex
+                        +flex-direction(row)
+                        +align-items(center)
+                        +font-16-light
+
+                        .scroll-button
+                            color: $font-primary-color
+
+                    &__print
+                        +flex
+                        +flex-direction(row)
+                        +align-items(center)
+                        +font-16-light
+
+                .product-links
+                    +flex
+                    +flex-direction(column)
+
+                .buy-action-area
+                    +flex
+                    +flex-direction(row)
+                    +align-items(center)
+
+                    &__price
+                        .num
+                            +font-30_bold
+                            white-space: nowrap
+                        .text
+                            +font-16-light
+
+                    &__button-wrapper
+                        +flex
+                        +flex-direction(row)
+
+                    &__link
+                        +font-16-medium
+                        color: $accent-color
+
+                .configuration-wrapper
+                    +flex
+                    +flex-direction(column)
+
+                    &__link
+                        +flex
+                        +align-items(center)
+                        +justify-content(center)
+
+                .relevant-files
+                    .title
+                        +font-24_bold
+
+                    &__list
+                        +flex
+                        +flex-direction(column)
+                        max-height: 224px
+                        overflow: hidden
+
+                        &-item
+                            +flex
+                            +flex-direction(row)
+                            +align-items(center)
+                            +justify-content(flex-start)
+                            height: 56px
+                            &:not(&:last-child)
+                                border-bottom: 1px solid $accent-color-second
+
+                            .ext
+                                +font-16_bold
+                            .caption,
+                            .size
+                                +font-16_light
+                            .size
+                                margin-left: auto
+
+                    .button__wrapper
+                        +flex
+                        +flex-direction(row)
+                        +align-items(center)
+                        +justify-content(center)
+                        margin-top: -1px
+                        padding-top: 11px
+                        position: relative
+
+
+                .info-block
+                    +flex
+                    +flex-direction(column)
+
+                    .title
+                        +font-24_bold
+                    .text
+                        +font-16_light
+
+                .recomendation
+                    +flex
+                    +flex-direction(column)
+
+                    .title
+                        +font-24_bold
+                    .images-wrapper
+                        +flex
+                        +flex-direction(row)
+                        +align-items(center)
+                        +justify-content(center)
+
+
+
+    .product-pane
+        background: $bg-light-color
+        height: 64px
+        display: none
+        &.fixed
+            +flex
+            +flex-direction(row)
+            position: fixed
+            top: 0
+            width: 100%
+            z-index: 1000
+            transition: all .5s ease-out
+
+        &__wrapper
+            +flex
+            +flex-direction(row)
+            +align-items(center)
+
+            width: 100%
+
+            @include breakpoint(xl)
+            margin: 0 80px
+
+            @include breakpoint(xxl)
+                margin: 0 150px
+
+            .img
+                width: 48px
+                height: 48px
+                img
+                    max-width: 100%
+                    max-height: 100%
+            .title
+                +font-14-medium
+
+            .price
+                +font-24_bold
+                margin-left: auto
+
+            .root-button
+                width: auto
+
+    .middle-nav__wrapper
+        background: $bg-light-color
+        &.fixed
+            position: fixed
+            top: 64px
+            background: $white-color
+            width: 100%
+            z-index: 1000
+            box-shadow: 2px 2px 10px 0 $middleNav-shadow-color
+            transition: all .5s ease-out
+            .middle-nav
+                height: 52px
+                &__link
+                    +font-14-medium
+
+        .middle-nav
+            +flex
+            +flex-direction(row)
+            +align-items(center)
+            height: 92px
+
+            &__link
+                +flex
+                +align-items(center)
+                +font-20_bold
+
+                align-self: stretch
+                border-bottom: 2px solid transparent
+
+                &:hover,
+                &.isActive
+                    color: $accent-color
+                    border-bottom-color: $accent-color
+
+            @include breakpoint(xl)
+                margin: 0 80px
+
+            @include breakpoint(xxl)
+                margin: 0 150px
+
+
+    .product-description
+        +flex
+        +flex-direction(column)
+
+        @include breakpoint(xl)
+            margin: 0 80px
+
+        @include breakpoint(xxl)
+            margin: 0 150px
+
+        .two-column-layout
+            +flex
+            +flex-direction(row)
+
+            &__left,
+            &__right
+                +flex
+                +flex-direction(column)
+                width: 100%
+
+            &__right
+
+                @include breakpoint(xl)
+                    max-width: 250px
+                @include breakpoint(xxl)
+                    max-width: 318px
+
+        &__block
+            .title
+                +font-24_bold
+
+            .text
+                +flex
+                +flex-direction(column)
+                +font-16-light
+                max-height: 110px
+
+        &__sidebar
+            +flex
+            +flex-direction(column)
+            &__video-wrapper
+                position: relative
+                border-radius: 15px
+                overflow: hidden
+                .play
+                    position: absolute
+                    top: 50%
+                    left: 50%
+                    transform: translate(-50%, -50%)
+                    cursor: pointer
+                img
+                    max-width: 100%
+            &__info-block
+                +flex
+                +flex-direction(column)
+                .logo-wrapper
+                    +flex
+                    +flex-direction(row)
+                    +align-items(center)
+
+                .notification
+                    +font-14-medium
+                    border-radius: 15px
+
+                .text
+                    +font-16-medium
+
+                    .title
+                        +font-20-bold
+
+                    .product-description__list
+                        &-item
+                            +font-16-medium
+                            list-style-position: inside
+                            &::marker
+                                color: $accent-color
+
+                    .root-button
+                        margin-top: 32px
+
+                .divider
+                    border-top: 1px solid $accent-color-second
+                    margin: 10px 16px
+
+
+
+
+        .accordion
+            max-height: 520px
+            &__item
+                +flex
+                +flex-direction(column)
+                height: auto
+                overflow: hidden
+
+                .caption
+                    +flex
+                    +flex-direction(row)
+                    +align-items(center)
+                    +font-20_bold
+                    cursor: pointer
+
+                    .icon
+                        margin-left: auto
+                        transition: all .3s ease-in
+
+                    &.open
+                        .icon
+                            transform: rotate(90deg)
+
+                .content
+                    max-height: 0
+                    overflow: hidden
+                    border-bottom: 1px solid $stroke-second-color
+                    transition: max-height 1s cubic-bezier(0, 1, 0, 1)
+
+                    &.open
+                        max-height: 500vh
+                        transition: max-height 1s ease-in-out
+
+        .characteristics
+            +flex
+            +flex-direction(column)
+
+            &__row
+                +flex
+                +flex-direction(row)
+                +align-items(center)
+                gap: 208px
+                +font-16-light
+
+            &__column
+                +flex
+                +flex-direction(column)
+                width: 100%
+
+                &:first-child
+                    max-width: 226px
+
+            &__link
+                +font-16-light
+                text-decoration: underline
+                &:hover
+                    text-decoration: none
+
+    .accessories
+        &__row
+            +flex
+            +flex-direction(row)
+            +align-items(flex-start)
+
+        &__column
+            &-left,
+            &-right
+                width: 100%
+
+            &-left
+                +flex
+                +flex-direction(column)
+            &-right
+                +flex
+                +flex-direction(column)
+
+                @include breakpoint(xl)
+                    max-width: 250px
+                @include breakpoint(xxl)
+                    max-width: 318px
+
+@keyframes smoothSticky
+    0%
+        transform: translateY(-32px)
+    100%
+        transform: translateY(0px)

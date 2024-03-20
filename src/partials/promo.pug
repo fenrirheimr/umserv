@@ -1,0 +1,37 @@
+- const dataSubHeader = [{"title": "Оборудование", "link": "#"},{"title": "Отраслевые решения", "link": "#"},{"title": "Сервис и ремонт", "link": "#"},{"title": "Компания", "link": "#"},{"title": "Медиацентр", "link": "#"}]
+
+include ../components/input-field
+include ../components/checkbox
+include ../components/button
+
+section.promo.mb-10
+    .slider.promo-slider
+        .slider__wrapper
+            #items.slider__items
+                span.slider__item(style='background-image: url("src/assets/img/promo-1.png");')
+                    .slider__item-wrapper
+                        .slider__item-container
+                            .slider__item-content.gy-9.py-9
+                                header.gy-4
+                                    h1.title Группа компаний Умный сервис
+                                    .sub-title Инновационные технологии для автоматизации будущего
+                                .promo__form-wrapper
+                                    form(method="" action="").form.gy-3
+                                        .form-fields-wrapper.gx-3
+                                            +input-field("tel", 'Телефон *', '', 'required', '[8]{1}[0-9]{3}[0-9]{3}[0-9]{4}')
+                                            .error-message.hidden
+                                            +button("button", "Заказать звонок")
+
+                                        .form-description Увеличивайте прибыль с помощью автоматизации
+                                            br/ Получите консультацию нашего специалиста
+                                        .form-checkbox-wrapper.gx-2.mt-3
+                                            +checkbox(true)
+                                            .label
+                                                | Я соглашаюсь с
+                                                a(href="#") офертой
+                                                |
+                                                | и
+                                                |
+                                                a(href="#") условиями обработки персональных данных
+                //span.slider__item Slide 2
+                //span.slider__item Slide 3

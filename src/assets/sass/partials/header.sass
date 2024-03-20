@@ -1,0 +1,112 @@
+.header
+    background-color: $font-primary-color
+    height: 52px
+    position: relative
+    z-index: 999
+
+    &-wrapper
+        height: 100%
+        position: relative
+        z-index: 999
+
+        @include breakpoint(xl)
+            margin: 0 80px
+
+        @include breakpoint(xxl)
+            margin: 0 150px
+
+    &-container
+        max-width: 1920px
+        margin: 0 auto
+        height: 100%
+        position: relative
+        z-index: 999
+
+    &-content
+        +flex
+        +flex-direction(row)
+        +align-items(center)
+        width: 100%
+        height: 100%
+        position: relative
+        z-index: 999
+
+    &-menu
+        +flex
+        +align-items(center)
+        height: 100%
+
+        .logo
+            width: 163px
+            height: 25px
+
+        &__container
+            +flex
+            &__list
+                +flex
+                +flex-direction(row)
+
+                &__item
+                    list-style-type:  none
+                    a
+                        +font-14-medium
+                        color: $white-color
+                        text-decoration: none
+
+    &-buttons
+        margin-left: auto
+        &__container
+            +flex
+            +flex-direction(row)
+            +align-items(center)
+
+            &__item
+                +flex
+                +flex-direction(row)
+                +align-items(center)
+
+                position: relative
+                width: 32px
+                height: 32px
+                .header-icon
+                    cursor: pointer
+                .phones-list
+                    +flex
+                    +flex-direction(column)
+                    +align-items(flex-start)
+                    width: 310px
+                    border: 1px solid $stroke-second-color
+                    border-radius: 10px
+                    background: $bg-light-color
+                    position: absolute
+                    top: 100%
+                    left: 50%
+                    z-index: 998
+                    animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both
+                    &__item
+                        +flex
+                        +flex-direction(column)
+                        +align-items(flex-start)
+
+                        &__title
+                            +font-title_popup
+
+                        &__rows
+                            +flex
+                            +flex-direction(column)
+                            +align-items(flex-start)
+
+                        &__row
+                            +font-14-medium
+                            color: $black-color
+                            list-style: none
+                            letter-spacing: 0.0021em
+                            a
+                                color: $black-color
+
++keyframes(slide-bottom)
+    0%
+        transform: translate(-50%, 0)
+
+    100%
+        transform: translate(-50%, 20px)

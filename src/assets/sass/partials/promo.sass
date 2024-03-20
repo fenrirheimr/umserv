@@ -1,0 +1,129 @@
+
+.promo
+    height: 558px
+    background-color: $white-color
+
+    .slider
+        max-width: 1920px
+        margin: 0 auto
+        position: relative
+        width: 100vw
+        height: 100%
+        &__wrapper
+            overflow: hidden
+            position: relative
+            width: 100vw
+            height: 100%
+        &__items
+            +flex
+            +flex-direction(row)
+            width: 10000%
+            position: relative
+            top: 0
+            height: 100%
+            &.shifting
+                transition: left .2s ease-out
+        &__item
+            +flex
+            +flex-direction(row)
+            +justify-content(center)
+            width: 100%
+            height: 100%
+            position: relative
+            &-wrapper
+                width: 100%
+                height: 100%
+
+                @include breakpoint(xl)
+                    margin: 0 80px
+
+                @include breakpoint(xxl)
+                    margin: 0 150px
+
+            &-container
+                max-width: 1920px
+                margin: 0 auto
+                height: 100%
+
+            &-content
+                +flex
+                +flex-direction(column)
+                max-width: 50%
+                height: 100%
+                header
+                    +flex
+                    +flex-direction(column)
+
+                    @include breakpoint(xl)
+                        max-width: 80%
+
+                    @include breakpoint(xxl)
+                        max-width: 60%
+
+                    & > .title
+                        +font-h1
+                    .sub-title
+                        +font-30_bold
+
+        .control
+            position: absolute
+            top: 50%
+            width: 40px
+            height: 40px
+            background: #fff
+            border-radius: 20px
+            margin-top: -20px
+            box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3)
+            z-index: 2
+            &.prev, &.next
+                background-size: 22px
+                background-position: center
+                background-repeat: no-repeat
+                cursor: pointer
+                &:active
+                    transform: scale(0.8)
+
+            &.prev
+                background-image: url(https://cdn0.iconfinder.com/data/icons/navigation-set-arrows-part-one/32/ChevronLeft-512.png)
+                left: 20px
+
+            &.next
+                background-image: url(https://cdn0.iconfinder.com/data/icons/navigation-set-arrows-part-one/32/ChevronRight-512.png)
+                right: 20px
+
+    &__form-wrapper
+        .form
+            +flex
+            +flex-direction(column)
+            max-width: 470px
+
+            &-fields-wrapper
+                +flex
+                +flex-direction(row)
+                position: relative
+
+                & > div
+                    width: 50%
+                    border-radius: 45px
+                    button
+                        width: 100%
+                        min-width: 50%
+                .error-message
+                    +font-12-light
+                    color: $alert-color
+                    width: 100%
+                    position: absolute
+                    top: 100%
+
+
+            &-description
+                +font-14-medium
+            &-checkbox-wrapper
+                +flex
+                +flex-direction(row)
+                +align-items(flex-start)
+                .label
+                    +font-14-medium
+                    max-width: 360px
+                    a
+                        color: $accent-color

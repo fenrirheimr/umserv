@@ -1,0 +1,7 @@
+mixin breadcrumbs(page, links)
+    nav.breadcrumbs.pt-4(class=page)
+        .breadcrumbs__inner.gx-1
+            a(href="/") Главная
+                if links
+                    each link in links
+                        a(href=link.url)= link.title

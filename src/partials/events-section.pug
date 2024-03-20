@@ -1,0 +1,29 @@
+extends ./content-section
+include ../components/arrow-link
+
+block header
+    h2.title События
+block extend
+block content
+    .events.content-wrapper
+        .content-row
+            .content-row__item.left.gy-4
+                .caption Умный сервис стал участником международной<br />выставки TransRussia 2023
+                .content-row__item-text-wrapper.gy-2
+                    p.text С 17 по 19 апреля в Москве, в крупнейшем центре «Крокус Экспо» прошла самая масштабная транспортная выставка логистических, таможенных, транспортных услуг и технологий «TransRussia 2023».
+                    p.text Компания «Умный сервис» не первый раз приняла участие в крупнейшей отраслевой выставке
+
+                .meta.gx-5
+                    .data 12.03.23
+
+                    .tags.gx-3
+                        - const tagsData = [{"link":"#","title":"#transrussia24"},{"link":"#","title":"#krokusekspo"},{"link":"#","title":"#logistika"}]
+                        each item in tagsData
+                            a.link(href=item.link)= item.title
+
+
+                +arrow-link('#', 'Смотреть все события')
+
+            .content-row__item.right
+                .image-wrapper
+                    img(src="img/event-img.png")

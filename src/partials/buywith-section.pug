@@ -1,0 +1,20 @@
+extends ./inner-section
+include ../components/arrow-link
+include ../components/button-arrow-link
+include ../components/tags
+
+block header
+    h2.title С этим товаром покупают
+
+block content
+    .buywith.content-wrapper.gy-5
+        +tags(buywithTags)
+
+        .content-row.expand-container
+            each item in catalogProducts
+                +catalog-item("product", item)
+
+        .content-row
+            .content-row__button-wrapper
+                +button("button", "Показать все", "expand-button")
+

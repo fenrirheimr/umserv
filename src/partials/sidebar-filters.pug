@@ -1,0 +1,26 @@
+include ../components/expand-link
+include ../components/checkbox
+include ../components/input-field
+
+mixin sidebar-filters(data)
+    .sidebar-filters.gy-3.px-3.py-4
+        .sidebar-filters__caption Производитель
+        ul.sidebar-filters__list.expand-container.gy-3
+            each item in data
+                li.sidebar-filters__list-item
+                    .sidebar-filters__list__checkbox-wrapper
+                        label.label.gx-2
+                            +checkbox(false, "filled", "16")
+                            =item
+        +expand-link('Развернуть все')
+
+        .sidebar-filters__caption Цена
+        .form.range-wrapper.gy-2
+            .form-fields.gx-3
+                +input-field("number", null, null, null, null, 'minamount', 0, 999)
+                +input-field("number", null, null, null, null, 'maxamount', 1, 1000)
+            .multi-range
+                input#lower(type='range', min='0', max='999')
+                input#upper(type='range', min='1', max='1000')
+            +button("button", "Применить")
+            +button("button", "Сбросить", "outlined")

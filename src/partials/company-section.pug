@@ -1,0 +1,23 @@
+extends ./content-section
+include ../components/arrow-link
+
+block header
+    h2.title Компания
+block extend
+block content
+    .company.content-wrapper
+        .content-row
+            .content-row__item.gy-3
+                .content-row__item-text-wrapper.gy-2
+                    p.text Группа компаний «Умный сервис» специализируется на внедрении инновационных решений в области маркировки и роботизации.
+                    p.text Мы помогаем оптимизировать затраты на операции и повысить эффективность работы персонала в различных отраслях, таких как ритейл, логистика и производство.
+                    p.text «Умный сервис» входит в реестр аккредитованных IT-компаний Министерством Цифрового развития РФ
+
+                +arrow-link('#', 'Подробнее')
+
+            .content-row__item
+                .stat
+                    each item in statData
+                        .stat-item.gx-3.py-4
+                            .stat-item__num= item.num
+                            .stat-item__text= item.text

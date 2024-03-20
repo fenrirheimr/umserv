@@ -1,0 +1,224 @@
+// H1
+=font-h1
+	font-family: $default-font
+	font-size: 48px
+	font-weight: 600
+	line-height: 60px
+	color: $font-primary-color
+
+// h2;
+=font-h2
+	font-family: $default-font
+	font-size: 30px
+	font-weight: 600
+	line-height: 44px
+	color: $font-primary-color
+
+// Body 14 mob
+=font-h2_navigation-menu
+	font-family: $default-font
+	font-size: 24px
+	font-weight: 500
+	line-height: 36.25px
+	color: $default-color
+
+=font-description
+	font-family: $default-font
+	font-size: 16px
+	font-weight: 400
+	line-height: 23px
+	letter-spacing: 0em
+	color: $font-primary-color
+
+=font-button_desktop-18
+	//styleName: Button desktop 18;
+	font-family: $default-font
+	font-size: 18px
+	font-weight: 600
+	line-height: 26px
+	letter-spacing: 0.03em
+	color: $white-color
+
+=font-description-medium
+	font-family: $default-font
+	font-size: 16px
+	font-weight: 500
+	line-height: 22px
+	letter-spacing: 0em
+	color: $font-primary-color
+
+=font-body_16-mob
+	font-family: $default-font
+	font-size: 16px
+	font-weight: 400
+	line-height: 22px
+	letter-spacing: 0.005em
+	color: $font-primary-color
+
+=font-price_title
+	//styleName: price_tile;
+	font-family: $default-font
+	font-size: 24px
+	font-weight: 600
+	line-height: 31px
+	letter-spacing: 0em
+	color: $font-primary-color
+
+=font-title_popup
+	//styleName: Title popup;
+	font-family: $default-font
+	font-size: 16px
+	font-weight: 600
+	line-height: 23px
+	letter-spacing: 0em
+	color: $font-primary-color
+
+=font-38_bold
+	font-family: $default-font
+	font-size: 38px
+	font-weight: 600
+	line-height: 48px
+	color: $font-primary-color
+
+=font-30_bold
+	font-family: $default-font
+	font-size: 30px
+	font-weight: 600
+	line-height: 38px
+	color: $font-primary-color
+
+=font-24_bold
+	font-family: $default-font
+	font-size: 24px
+	font-weight: 600
+	line-height: 31px
+	color: $font-primary-color
+
+=font-25_medium
+	font-family: $default-font
+	font-size: 25px
+	font-weight: 500
+	line-height: 31px
+	color: $font-primary-color
+
+=font-20_bolder
+	font-family: $default-font
+	font-size: 20px
+	font-weight: 700
+	line-height: 31px
+	color: $font-primary-color
+
+=font-20_bold
+	font-family: $default-font
+	font-size: 20px
+	font-weight: 600
+	line-height: 27px
+	color: $font-primary-color
+
+=font-20_medium
+	font-family: $default-font
+	font-size: 20px
+	font-weight: 500
+	line-height: 27px
+	color: $font-primary-color
+
+=font-18-bold
+	font-family: $default-font
+	font-size: 18px
+	font-weight: 600
+	line-height: 22px
+	color: $font-primary-color
+
+=font-16-bold
+	font-family: $default-font
+	font-size: 16px
+	font-weight: 600
+	line-height: 22px
+	color: $font-primary-color
+
+=font-16-medium
+	font-family: $default-font
+	font-size: 16px
+	font-weight: 500
+	line-height: 22px
+	color: $font-primary-color
+
+=font-16-light
+	font-family: $default-font
+	font-size: 16px
+	font-weight: 400
+	line-height: 22px
+	color: $font-primary-color
+
+=font-14-bolder
+	font-family: $default-font
+	font-size: 14px
+	font-weight: 700
+	line-height: 19px
+	letter-spacing: 0.0015em
+	color: $font-primary-color
+
+=font-14-bold
+	font-family: $default-font
+	font-size: 14px
+	font-weight: 600
+	line-height: 19px
+	letter-spacing: 0.0015em
+	color: $font-primary-color
+
+=font-14-medium
+	font-family: $default-font
+	font-size: 14px
+	font-weight: 500
+	line-height: 19px
+	letter-spacing: 0.0015em
+	color: $font-primary-color
+
+=font-14-light
+	font-family: $default-font
+	font-size: 14px
+	font-weight: 400
+	line-height: 19px
+	letter-spacing: 0.0025em
+	color: $font-primary-color
+
+=font-12-medium
+	font-family: $default-font
+	font-size: 12px
+	font-weight: 500
+	line-height: 16px
+	color: $font-primary-color
+
+=font-12-light
+	font-family: $default-font
+	font-size: 12px
+	font-weight: 400
+	line-height: 16px
+	color: $font-primary-color
+
+=font-subtitle2
+	font-family: $default-font
+	font-size: 20px
+	font-weight: 600
+	line-height: 27px
+	color: $font-primary-color
+
+=font-subtitle3
+	font-family: $default-font
+	font-size: 20px
+	font-weight: 500
+	line-height: 27px
+	color: $font-primary-color
+
+// For all font-face file extension.
+// How to use:
+// +font-face("Merriweather"(font-face name), "../fonts/Merriweather/MerriweatherRegular/MerriweatherRegular"(font-face path), 400(font-face weight))
+// and after you can input it in code like this:
+// font-family: "Merriweather", sans-serif
+@mixin font-face($font-family, $file-path, $weight: normal, $style: normal)
+	@font-face
+		font-family: $font-family
+		font-weight: $weight
+		font-style: $style
+		font-display: swap
+		src: url('#{$file-path}.woff2') format('woff2'), url('#{$file-path}.woff') format('woff')

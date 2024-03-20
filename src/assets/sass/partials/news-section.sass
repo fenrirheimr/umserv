@@ -1,0 +1,172 @@
+.news.content-wrapper
+    +flex
+    +flex-direction(column)
+    width: 100%
+
+    .content-row
+        +flex
+        +flex-direction(row)
+        +align-items(flex-start)
+        width: 100%
+
+        .news-two-columns-layout
+            &__left,
+            &__right
+                +flex
+                +flex-direction(row)
+                max-width: 970px
+
+            &__right
+                width: 100%
+
+                @include breakpoint(xl)
+                    //max-width: 250px
+                @include breakpoint(xxl)
+                    max-width: 604px
+
+        .slider
+            +flex
+            +flex-direction(row)
+            +align-items(flex-start)
+            width: 970px
+            max-width: 100%
+            margin: 0 auto
+            position: relative
+            height: 100%
+
+            &__wrapper
+                overflow: hidden
+                position: relative
+                z-index: 1
+                height: 100%
+            &__items
+                +flex
+                +flex-direction(row)
+                width: 10000%
+                position: relative
+                top: 0
+                height: 100%
+                &.shifting
+                    transition: left .2s ease-out
+
+            &__item
+                +flex
+                +flex-direction(column)
+                border-radius: 15px
+                width: 318px !important
+                height: 408px
+                cursor: pointer
+                transition: all .3s
+                position: relative
+                border: 1px solid $stroke-second-color
+
+                &:hover
+                    box-shadow: 1px 1px 5px 0 rgba(156, 180, 186, 0.83)
+
+                .img__wrapper
+                    width: 100%
+                    border-radius: 10px
+                    overflow: hidden
+                    img
+                        max-width: 100%
+
+                .news__caption
+                    +font-16-medium
+
+                .meta
+                    +flex
+                    +flex-direction(row)
+                    +align-items(center)
+                    +font-16-medium
+                    margin-top: auto
+
+                    width: 100%
+
+                    .icons-wrapper
+                        +flex
+                        +flex-direction(row)
+                        +align-items(center)
+                        color: $accent-color
+
+                        .icon-item
+                            +flex
+                            +flex-direction(row)
+                            +align-items(center)
+
+                    .date
+                        +font-16-medium
+                        color: $font-second-color
+                        margin-left: auto
+
+        .control
+            position: absolute
+            top: 50%
+            width: 37px
+            height: 37px
+            background: #fff
+            border: 1px solid $stroke-second-color
+            border-radius: 20px
+            margin-top: -20px
+            z-index: 2
+            &.prev, &.next
+                background-position: 50%
+                background-repeat: no-repeat
+                cursor: pointer
+                background-size: auto
+                &:active
+                    transform: scale(0.8)
+
+            &.prev
+                left: -19px
+                background-position-x: 40%
+                background-image: url('data:image/svg+xml,<svg width="10" height="17" viewBox="0 0 10 17" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23clip0_574_2399)"><path d="M8.92893 1.71067L1.85786 8.78174L8.92893 15.8528" stroke="%23141212" stroke-linecap="round"/></g><defs><clipPath id="clip0_574_2399"><rect width="16.106" height="10" fill="white" transform="matrix(4.34238e-08 -1 -1 -4.40009e-08 10 16.7817)"/></clipPath></defs></svg>')
+
+            &.next
+                right: -19px
+                background-image: url('data:image/svg+xml,<svg width="10" height="17" viewBox="0 0 10 17" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23clip0_574_2509)"><path d="M1.07107 1.71067L8.14214 8.78174L1.07107 15.8528" stroke="%23141212" stroke-linecap="round"/></g><defs><clipPath id="clip0_574_2509"><rect width="16.106" height="10" fill="white" transform="translate(0 16.7817) rotate(-90)"/></clipPath></defs></svg>')
+
+
+        .subscribe-wrapper
+            +flex
+            +flex-direction(column)
+            width: 100%
+            .caption
+                +font-25-medium
+
+            .subscribe-form
+                .form
+                    &-fields-wrapper
+                        +flex
+                        +flex-direction(row)
+                        width: 100%
+                        .inner
+                            width: 100%
+                            position: relative
+
+                        .input-fields-wrapper
+                            width: 100%
+                            border-radius: 45px
+                            background: transparent
+                            .input-field
+                                background: transparent
+                        .button-submit
+                            position: absolute
+                            top: 12px
+                            right: 16px
+                            cursor: pointer
+                            width: 24px
+                            height: 24px
+                            border: 0
+                            outline: none
+                            background: url('data:image/svg+xml,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.6569 5.9994L16.3137 11.6562L10.6569 17.3131" stroke="%230099A3"/></svg>')
+
+                    &-checkbox-wrapper
+                        +flex
+                        +flex-direction(row)
+                        +align-items(flex-start)
+                        gap: 8px
+                        .label
+                            +font-14-medium
+                            max-width: 360px
+                            a
+                                color: $accent-color

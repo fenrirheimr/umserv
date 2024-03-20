@@ -1,0 +1,42 @@
+- const dataNav = [{"title": "О нас", "link": "#"}, {"title": "Умный сервис", "link": "#"}, {"title": "Контакты", "link": "#"}, {"title": "Доставка", "link": "#"}, {"title": "Портфолио", "link": "#"}]
+- const dataPhones = [{"title": "+7 (495) 927-95-29 (отдел продаж)", "link": "tel:+74959279529"}, {"title": "+7 800 500-71-45 (сервис и ремонт)", "link": "tel:+78005007145"}, {"title": "+7 (495) 120 34 63 (склад)", "link": "tel:+74951203463"}]
+- const dataEmails = [{"title": "zakaz@umserv.ru", "link": "mailto:zakaz@umserv.ru"}]
+- const dataTimes = [{"title": "С 9:00 до 18:00 по будням"}]
+
+include ../components/icon
+
+header.header
+    .header-wrapper
+        .header-container
+            .header-content.gx-8
+                nav.header-menu.gx-5
+                    a(href='/').logo
+                        img(src="src/assets/img/logo.svg")
+                    nav.header-menu__container
+                        ul.header-menu__container__list.gx-5
+                            each item in dataNav
+                                li.header-menu__container__list__item
+                                    a(href=item.link)= item.title
+                .header-buttons
+                    .header-buttons__container.gx-4
+                        .header-buttons__container__item
+                            span#phone-icon-btn.header-icon
+                                +icon('phone', "24")
+
+                            #phones-list-area.phones-list.hidden.pa-4.gy-4
+                                .phones-list__item.gy-2
+                                    span.phones-list__item__title Телефон
+                                    ul.phones-list__item__rows.gy-2
+                                        each item in dataPhones
+                                            li.phones-list__item__row
+                                                a(href=item.link)= item.title
+                                .phones-list__item
+                                    span.phones-list__item__title E-mail
+                                    ul.phones-list__item__rows
+                                        each item in dataEmails
+                                            li.phones-list__item__row.copy-text(tabindex=1)= item.title
+                                .phones-list__item
+                                    span.phones-list__item__title Режим работы
+                                    ul.phones-list__item__rows
+                                        each item in dataTimes
+                                            li.phones-list__item__row= item.title

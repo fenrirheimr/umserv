@@ -1,0 +1,88 @@
+.checkbox-container
+    +flex
+    +flex-direction(row)
+    +align-items(center)
+    cursor: pointer
+    .title
+        +flex
+        +font-16-medium
+        order: 1
+    .checkbox-wrapper
+        +flex
+        width: 20px
+        height: 20px
+        order: 2
+        .checkbox
+            display: inline-block
+            position: relative
+            cursor: pointer
+            vertical-align: top
+            width: 20px
+            height: 20px
+            &:before
+                content: ""
+                display: block
+                position: absolute
+                width: 18px
+                height: 18px
+                top: 0
+                left: 0
+                border: 1px solid $accent-color
+                background-color: transparent
+                border-radius: 3px
+            &:checked:before
+                content: ""
+                display: block
+                position: absolute
+                width: 18px
+                height: 18px
+                top: 0
+                left: 0
+            &:checked:after
+                content: ""
+                display: block
+                width: 4px
+                height: 9px
+                border: solid $accent-color
+                border-width: 0 1px 1px 0
+                transform: rotate(45deg)
+                position: absolute
+                top: 3px
+                left: 8px
+        &.filled
+            .checkbox
+                &:before
+                    background-color: #EDFCFF
+                &:checked:before
+                    background-color: $accent-color
+                &:checked:after
+                    border: solid $white-color
+                    border-width: 0 1px 1px 0
+
+
+        &.size-16
+            width: 17px
+            height: 17px
+            .checkbox
+                width: 17px
+                height: 17px
+                &:before,
+                &:checked:before
+                    width: 15px
+                    height: 15px
+                &:checked:after
+                    height: 9px
+                    top: 1px
+                    left: 5px
+
+    &.before
+        .title
+            order: 1
+        .checkbox-wrapper
+            order: 2
+
+    &.after
+        .title
+            order: 2
+        .checkbox-wrapper
+            order: 1

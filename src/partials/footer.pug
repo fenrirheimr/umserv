@@ -1,0 +1,78 @@
+- const contactsData = [{"title": "+7 (495) 927-95-29", "link": "tel:+74959279529", "description": "отдел продаж"}, {"title": "+7 800 500-71-45", "link": "tel:+78005007145", "description": "сервис и ремонт"}, {"title": "zakaz@umserv.ru", "link": "mailto:zakaz@umserv.ru", "copied": "true"}, {"description": "г. Москва 1-й Магистральный проезд, д. 11, стр. 5"}]
+- const icons = ["telegram", "vk", "dzen", "youtube"]
+- const servIcons = ["chat", "goTop"]
+- const footerNav = [{"title":"Оборудование","link":"#","items":[{"title":"Терминалы сбора данных","link":"#"},{"title":"Сканеры штри-хкода","link":"#"},{"title":"Принтеры этикеток","link":"#"}]},{"title":"Отраслевые решения","link":"#","items":[{"title":"Производство","link":"#"},{"title":"Логистика","link":"#"},{"title":"Ритейл","link":"#"},{"title":"Здравоохранение","link":"#"},{"title":"Ювелирные изделия","link":"#"},{"title":"Молочная отрасль","link":"#"}]},{"title":"Сервис и ремонт","link":"#","items":[{"title":"Сервисные контракты","link":"#"},{"title":"Ремонт ТСД","link":"#"},{"title":"Ремонт принтеров","link":"#"},{"title":"Ремонт сканеров","link":"#"},{"title":"Аутсорсинг IT-инфраструктуры","link":"#"},{"title":"Трейд-ин","link":"#"},{"title":"Модернизация ТСД","link":"#"},{"title":"Аренда ТСД","link":"#"}]},{"title":"Компания","link":"#","items":[{"title":"Команда","link":"#"},{"title":"Партнерам","link":"#"},{"title":"Клиенты","link":"#"},{"title":"Сертификаты","link":"#"},{"title":"Вакансии","link":"#"},{"title":"Контакты","link":"#"},{"title":"Доставка и оплата","link":"#"},{"title":"Гарантийные обязательства","link":"#"}]},{"title":"Медиацентр","link":"#","items":[{"title":"Новости","link":"#"},{"title":"Статьи","link":"#"},{"title":"Кейсы","link":"#"},{"title":"Вопрос-ответ","link":"#"}]}]
+
+include ../components/input-field.pug
+include ../components/checkbox
+include ../components/icon
+
+footer.footer
+    .footer-wrapper
+        .footer-container
+            .footer-content__row.py-5
+                .footer-nav
+                    each item in footerNav
+                        .footer-nav__item.gy-3.mb-5
+                            a.footer-nav__item__root_link(href=item.link)= item.title
+                            ul.footer-nav__item-submenu.gy-2
+                                each subitem in item.items
+                                    li.footer-nav__item-submenu__item
+                                        a.footer-nav__item-submenu__item__link(href=subitem.link)= subitem.title
+
+                .footer-contacts
+                    .footer-contacts__wrapper
+                        .subscribe-form
+                            .subscribe-form__title.mb-4 Подписаться на рассылку
+                            form.form(method="" action="")
+                                .form-fields-wrapper.mb-3
+                                    +input-field("email", 'Email')
+                                    button.button-submit(type="submit")
+                                .form-checkbox-wrapper.gx-2
+                                    +checkbox(true)
+                                    .label
+                                        | Я соглашаюсь с
+                                        a(href="#") офертой
+                                        |
+                                        | и
+                                        |
+                                        a(href="#") условиями обработки персональных данных
+                        .social-icons-wrapper.gx-3.mt-5.mb-7
+                            each icon in icons
+                                a(href="#")
+                                    +icon(icon, "32")
+
+                        .footer-contacts__data.gy-3
+                            each item in contactsData
+                                .footer-contacts__data-item
+                                    -if (item.title && !item.copied)
+                                        .item__title
+                                            a(href=item.link)= item.title
+
+                                    -if (item.copied)
+                                        .item__description.copy-text(tabindex=1)= item.title
+
+                                    -if (item.description)
+                                        .item__description= item.description
+
+            .footer-content__row.py-5
+                .footer-content__block.gx-9
+                    .footer-content__block__column.gy-2.first
+                        img(src="src/assets/img/logo-footer.svg")
+                        span.text Группа компаний «Умный сервис» прилагает все усилия, чтобы гарантировать точность и актуальность информации, представленной на этом сайте. Однако, мы не можем гарантировать абсолютную точность и полноту данных.
+                        span.text Администрация сайта сохраняет за собой право изменять содержание сайта в любое время и по собственному решению. Копирование и распространение любой текстово-графической информации, размещенной на сайте umserv.ru, является нарушением авторских прав и влечет за собой правовые последствия
+                        .copy.mt-3
+                            |  &copy; Умный сервис 2013-2024
+                            .divider.mx-2
+                            a(href="#").map-link Карта сайта
+
+                    .footer-content__block__column.gy-2.mt-5.second
+                        img(src="src/assets/img/mintsifry_logo.png")
+                        span.text Компания входит в реестр аккредитованных IT-компаний
+
+                .footer-counter
+                    .example
+
+            each icon in servIcons
+                a(href="#" class="footer-icon-item item__"+icon)
+                    +icon(icon, "32")

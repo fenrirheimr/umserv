@@ -1,0 +1,54 @@
+.company.content-wrapper
+    +flex
+    +flex-direction(row)
+    width: 100%
+    .content-row
+        +flex
+        +flex-direction(row)
+        +align-items(flex-start)
+        width: 100%
+
+        @include breakpoint(xl)
+            gap: 70px
+        @include breakpoint(xxl)
+            gap: 240px
+
+        &__item
+            +flex
+            +flex-direction(column)
+            width: 100%
+            align-self: stretch
+
+            &-text-wrapper
+                +flex
+                +flex-direction(column)
+
+            .text
+                +font-16-light
+
+            .arrow-link-wrapper
+                margin-top: auto
+
+            .stat
+                +flex
+                +flex-direction(column)
+
+                &-item
+                    +flex
+                    +flex-direction(row)
+                    &:first-child
+                        padding-top: 0 !important
+                    &:last-child
+                        padding-bottom: 0 !important
+                    &:not(:last-child)
+                        border-bottom: 1px solid $stroke-second-color
+                    &:hover
+                        .stat-item__num
+                            color: $accent-color
+
+                    &__num
+                        +font-38_bold
+                        min-width: 100px
+                    &__text
+                        +font-16-light
+

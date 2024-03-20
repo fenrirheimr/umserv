@@ -1,0 +1,27 @@
+.subcategories
+    +flex
+    +flex-direction(column)
+    width: 100%
+    border: 1px solid $stroke-second-color
+    border-radius: 15px
+    overflow: hidden
+    position: relative
+    background: $hover-gradient
+    &__caption
+        +font-16-bold
+
+    &__list
+        +flex
+        +flex-direction(column)
+        list-style: none
+        max-height: 180px
+        overflow: hidden
+        line-height: 20px
+
+        &.show
+            max-height: 100%
+
+        a
+            +font-14-medium
+            &:hover
+                color: $accent-color

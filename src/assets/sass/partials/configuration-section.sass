@@ -1,0 +1,122 @@
+.configuration-section.content-wrapper
+    +flex
+    +flex-direction(column)
+
+    .content-row
+        +flex
+        +flex-direction(row)
+        +align-items(flex-start)
+        +justify-content(center)
+        +flex-wrap(wrap)
+        width: 100%
+        .configurations-filters
+            +flex
+            +flex-direction(row)
+            +align-items(flex-start)
+            +flex-wrap(wrap)
+            width: 100%
+
+            &__cell
+                width: 25%
+                max-width: 25%
+                +align-self(stretch)
+                &__title
+                    +font-20-medium
+
+                &__content
+                    +flex
+                    +flex-direction(row)
+                    +align-items(center)
+                    +flex-wrap(wrap)
+
+                    .radio-button-container
+                        width: 100%
+                        margin-bottom: 8px
+        .config-two-columns
+            +flex
+            +flex-direction(row)
+            +align-items(flex-end)
+            width: 100%
+
+            &__column-left,
+            &__column-right
+                +flex
+                +flex-direction(row)
+                +align-items(center)
+                width: 100%
+
+            .config__checkbox-wrapper
+                padding: 15px 18px
+                border: 1px solid $accent-color-second
+                border-radius: 8px
+
+            .price-range
+                +flex
+                +flex-direction(row)
+                +align-items(center)
+                margin-left: auto
+
+                .caption
+                    +font-20_bold
+
+                .multi-range
+                    width: 400px
+                    position: relative
+                    height: 22px
+                    .range-wrap
+                        position: relative
+                        .range-value
+                            +font-16-medium
+                            padding: 10px 14px
+                            border-radius: 5px
+                            position: absolute
+                            z-index: 1
+                            bottom: 100%
+                            transform: translateX(-50%)
+                            display: none
+
+
+                    input[type=range]
+                        box-sizing: border-box
+                        appearance: none
+                        width: 100%
+                        margin: 0
+                        overflow: hidden
+                        border: 0
+                        border-radius: 1px
+                        outline: none
+                        background: linear-gradient($accent-color, $accent-color) no-repeat center
+                        background-size: 100% 2px
+                        pointer-events: none
+                        position: absolute
+
+
+                        &:active,
+                        &:focus
+                            outline: none
+                            &:hover
+                                & + .range-value
+                                    display: block
+
+                        &::-webkit-slider-thumb
+                            height: 16px
+                            width: 16px
+                            border-radius: 16px
+                            background-color: $accent-color
+                            position: relative
+                            z-index: 2
+                            margin: 5px 0
+
+                            cursor: pointer
+                            appearance: none
+                            pointer-events: all
+
+                            &::before
+                                content: ' '
+                                display: block
+                                position: absolute
+                                top: 13px
+                                left: 100%
+                                width: 2000px
+                                height: 2px
+

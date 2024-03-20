@@ -1,0 +1,26 @@
+include ../components/catalog-item
+include ../components/button
+include ../components/pagination
+include ../partials/subcatigories
+include ../partials/sidebar-filters
+
+section.catalog-page.pt-5.pb-9
+    .catalog-page__wrapper.gy-5
+        .title Терминалы сбора данных
+
+        .two-column-layout.gx-2
+            .two-column-layout__left.gy-3
+                +subcategories(catalogSubCategories)
+                +sidebar-filters(catalogBrands)
+
+            .two-column-layout__right.gy-5
+                #products-list.two-column-layout__content
+                    each item in catalogProducts
+                        +catalog-item("product", item)
+
+                .two-column-layout__content
+                    +button("button", "Показать еще 20", "outlined")
+
+                .two-column-layout__content
+                    .pagonation-wrapper
+                        +pagination

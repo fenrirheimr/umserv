@@ -1,0 +1,31 @@
+include ../components/icon
+include ../components/input-field
+include ../components/checkbox
+include ../components/button
+
+.modal-mask.from-services
+    .modal
+        .modal__content
+            .modal__close
+                +icon("close", "16")
+            .caption Заказать проектное решение
+
+            .form
+                .form-fields
+                    +input-field("text", 'Имя', '', 'required')
+                    +input-field("tel", 'Телефон *', '', 'required', '[8]{1}[0-9]{3}[0-9]{3}[0-9]{4}')
+                    +input-field("email", 'Email', '', 'required')
+
+                .form-checkbox-wrapper
+                    +checkbox(true)
+                    .label
+                        | Я соглашаюсь с
+                        a(href="#") офертой
+                        |
+                        | и
+                        |
+                        a(href="#") условиями обработки персональных данных
+
+                .form__button-wrapper
+                    +button("button", "Показать все", "full-width")
+

@@ -1,0 +1,15 @@
+extends ./inner-section
+
+block header
+    h2.title Аксессуары
+
+block content
+    .accessories.content-wrapper.gy-5
+        .content-row.expand-container
+            each item in catalogProducts
+                +catalog-item("product", item)
+
+        .content-row
+            .content-row__button-wrapper
+                +button("button", "Показать все", "expand-button")
+

@@ -1,0 +1,27 @@
+.quantity
+    +flex
+    overflow: hidden
+    button
+        +font-20_medium
+        background: transparent
+        border: none
+        cursor: pointer
+        width: 30px
+        height: auto
+        text-align: center
+        transition: background-color 0.2s
+        &[disabled]
+            color: $font-second-color
+    .input-box
+        +font-20_medium
+        width: 40px
+        text-align: center
+        border: none
+        padding: 8px 10px
+        outline: none
+        &::-webkit-inner-spin-button,
+        &::-webkit-outer-spin-button
+            -webkit-appearance: none
+            margin: 0
+        &[type="number"]
+            -moz-appearance: textfield

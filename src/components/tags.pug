@@ -1,0 +1,4 @@
+mixin tags(data)
+    .tags.ga-3
+        each item in data
+            .tag(class=item.className)= item.title

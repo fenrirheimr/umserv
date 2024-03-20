@@ -1,0 +1,94 @@
+// For many properties.
+// How to use:
+// +prefix(filter, grayscale(100%) sepia(25%))
+=prefix($property, $parameters)
+	@each $prefix in -webkit-, -moz-, -ms-, -o-, ""
+		#{$prefix}#{$property}: $parameters
+
+=box-shadow($value...)
+	-webkit-box-shadow: $value
+	-moz-box-shadow: $value
+	-ms-box-shadow: $value
+	-o-box-shadow: $value
+	box-shadow: $value
+
+=text-shadow($value...)
+	-webkit-text-shadow: $value
+	-moz-text-shadow: $value
+	-ms-text-shadow: $value
+	-o-text-shadow: $value
+	text-shadow: $value
+
+// For placeholder.
+// How to use:
+// +placeholder
+// 	color: #fff
+=placeholder()
+	&::-webkit-input-placeholder
+		@content
+	&:-moz-placeholder
+		@content
+	&::-moz-placeholder
+		@content
+	&:-ms-input-placeholder
+		@content
+
+// For keyframes.
+// How to use:
+// +keyframes(animation_name)
+//  0%
+//    background-position: 0% 96%
+//  50%
+//    background-position: 100% 5%
+//  100%
+//    background-position: 0% 96%
+=keyframes($name)
+	@-webkit-keyframes #{$name}
+		@content
+	@-moz-keyframes #{$name}
+		@content
+	@-ms-keyframes #{$name}
+		@content
+	@keyframes #{$name}
+		@content
+		
+=scrollable($thumb-background: $accent-color, $track-background: transparent, $corner-background: transparent, $scrollbar-width: 10px, $scrollbar-height: 10px, $scrollbar-margin: 5px)
+	overflow: auto
+	&::-webkit-scrollbar
+		width: $scrollbar-width
+		height: $scrollbar-height
+		margin: $scrollbar-margin
+	&::-webkit-scrollbar-thumb
+		background: $thumb-background
+		border-radius: 20px
+	&::-webkit-scrollbar-track
+		background: $track-background
+		border-radius: 20px
+	&::-webkit-scrollbar-corner
+		background: $corner-background
+		
+=breakpoint($point)
+	@if $point == xxl //1920px
+		@media(min-width:$xxl)
+			@content
+	
+	@if $point == xl //1440px
+		@media(min-width:$xl)
+			@content
+	
+	@if $point == lg //1024px
+		@media(min-width:$lg)
+			@content
+
+	@else if $point == md //768px
+		@media(min-width:$md)
+			@content
+	
+	@else if $point == sm //720px
+		@media(min-width:$sm)
+			@content
+	
+	@else if $point == xs //320px
+		@media(min-width:$xs)
+			@content
+

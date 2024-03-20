@@ -1,0 +1,165 @@
+.footer
+    margin-top: auto
+    background-color: $bg-light-color
+    width: 100%
+    height: fit-content
+    position: relative
+
+    &-wrapper
+        height: 100%
+
+        @include breakpoint(xl)
+            margin: 0 80px
+
+        @include breakpoint(xxl)
+            margin: 0 150px
+
+    &-container
+        max-width: 1920px
+        margin: 0 auto
+        height: 100%
+
+    &-content__row
+        +flex
+        +flex-direction(row)
+        &:not(:last-of-type)
+            border-bottom: 1px solid $font-primary-color
+
+    &-nav
+        column-count: 3
+        column-gap: 0
+        width: 100%
+        &__item
+            display: grid
+            grid-template-rows: 1fr auto
+            break-inside: avoid
+            &__root_link
+                +font-title_popup
+            &-submenu
+                +flex
+                +flex-direction(column)
+                list-style: none
+                &__item
+                    +flex
+                    +flex-direction(row)
+                    &__link
+                        +font-12-medium
+
+
+    &-contacts
+        width: 100%
+        max-width: 400px
+        &__wrapper
+            +flex
+            +flex-direction(column)
+            width: 100%
+        .subscribe-form
+            &__title
+                +font-title_popup
+            .form
+                &-fields-wrapper
+                    position: relative
+                    .button-submit
+                        position: absolute
+                        top: 12px
+                        right: 16px
+                        cursor: pointer
+                        width: 24px
+                        height: 24px
+                        border: 0
+                        outline: none
+                        background: url('data:image/svg+xml,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.6569 5.9994L16.3137 11.6562L10.6569 17.3131" stroke="%230099A3"/></svg>')
+
+                &-checkbox-wrapper
+                    +flex
+                    +flex-direction(row)
+                    +align-items(flex-start)
+
+                    .label
+                        +font-14-medium
+                        max-width: 360px
+                        a
+                            color: $accent-color
+
+        .social-icons-wrapper
+            +flex
+            +flex-direction(row)
+
+        &__data
+            +flex
+            +flex-direction(column)
+
+            &-item
+                width: 100%
+                .item__title
+                    a
+                        +font-subtitle2
+                        &[href^="mailto:"]
+                            $parent2: &
+                            +font-14-medium
+
+                    &:has(> [href^="mailto:"])
+                        margin-top: 8px
+
+                .item__description
+                    +font-14-medium
+
+            &:last-child
+                .item__description
+                    max-width: 240px
+
+
+    &-content__block
+        +flex
+        +flex-direction(row)
+        width: 100%
+
+        &__column
+            +flex
+            +flex-direction(column)
+            width: 100%
+
+            img
+                width: fit-content
+            &.first
+                .text
+                    +font-12-light
+                .copy
+                    +flex
+                    +font-12-medium
+                    .divider
+                        border-left: 1px solid $font-primary-color
+                        height: 100%
+                    .map-link
+                        color: $font-primary-color
+
+            &.second
+                max-width: 440px
+                .text
+                    max-width: 230px
+                    +font-12-medium
+    &-counter
+        width: 100%
+        max-width: 400px
+        .example
+            width: 206px
+            height: 69px
+            background: $font-second-color
+            border-radius: 6px
+
+    .footer-icon-item
+        position: absolute
+        right: 30px
+        &.item__chat
+            bottom: 100px
+        &.item__goTop
+            bottom: 40px
+
++keyframes(blink)
+    0%
+        color: $accent-color
+        opacity: .5
+
+    100%
+        color: $font-primary-color
+        opacity: 1

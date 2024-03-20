@@ -1,0 +1,6 @@
+include ../components/icon
+
+mixin arrow-link(link, title, className, icon)
+    .arrow-link-wrapper
+        a.link.gx-2(href=link, class=className)= title
+            +icon(icon ? icon : 'arrow-right', "24")

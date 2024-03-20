@@ -1,0 +1,16 @@
+extends ./content-section
+include ../components/icon
+
+
+block header
+    h2.title Преимущества
+block extend
+block content
+    .advantages.content-wrapper
+        .content-row.gx-5
+             each item in advantagesData
+                .content-row__item.gy-3
+                    .icon
+                        +icon(item.icon, "72")
+                    .caption= item.caption
+                    .text= item.text

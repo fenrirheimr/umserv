@@ -1,0 +1,40 @@
+.content-section
+    &__wrapper
+        margin: 0 150px
+        height: 100%
+        position: relative
+        z-index: 999
+
+        @include breakpoint(xl)
+            margin: 0 80px
+        @include breakpoint(xxl)
+            margin: 0 150px
+
+    &__container
+        max-width: 1920px
+        margin: 0 auto
+        height: 100%
+        position: relative
+        z-index: 999
+
+    &__content
+        +flex
+        +flex-direction(column)
+        +align-items(flex-start)
+        width: 100%
+        height: 100%
+        position: relative
+        z-index: 999
+        header
+            +flex
+            +flex-direction(row)
+            +align-items(center)
+
+            .title
+                +font-30_bold
+
+        .content-block
+            +flex
+            +flex-direction(row)
+            +align-items(center)
+            width: 100%

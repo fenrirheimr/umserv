@@ -1,0 +1,23 @@
+extends ./inner-section
+include ../components/arrow-link
+include ../components/button
+include ../components/catalog-item
+include ../components/tags
+
+block header
+    h2.title Поддерживаемое ПО
+block extend
+    .extend
+        +arrow-link('#', 'Весь софт')
+block content
+    .supported-software.content-wrapper.gy-5
+        +tags(softTags)
+
+        .content-row.expand-container
+            each item in softData
+                +catalog-item("soft", item)
+
+        .content-row
+            .content-row__button-wrapper
+                +button("button", "Показать все", "expand-button")
+
