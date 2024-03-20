@@ -5,8 +5,15 @@ import pugPlugin from 'vite-plugin-pug'
 export default defineConfig({
   build: {
     rollupOptions: {
+      input: {
+        // need a better way to template
+        main: path.resolve(__dirname, 'index.html'),
+        page: path.resolve(__dirname, 'catalog.html'),
+        page2: path.resolve(__dirname, 'catalog-page.html'),
+        page3: path.resolve(__dirname, 'product-page.html'),
+      },
       output: {
-        inlineDynamicImports: true,
+        // inlineDynamicImports: true,
         chunkFileNames: `assets/js/[name].[hash].js`,
         entryFileNames: `assets/js/[name].[hash].js`,
         assetFileNames: (assetInfo) => {
@@ -38,5 +45,9 @@ export default defineConfig({
       '@models': path.resolve(__dirname, './src/models'),
       '@pages': path.resolve(__dirname, './src/pages'),
     },
-  }
+  },
+  server: {
+    host: '0.0.0.0',
+    port: 8084,
+  },
 })
