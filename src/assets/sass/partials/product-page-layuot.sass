@@ -1,6 +1,15 @@
 .product-page
     background: $white-color
 
+    .inner-container
+        +flex
+        +flex-direction(row)
+        +align-items(center)
+        width: 100%
+        max-width: 1620px
+        margin: 0 auto
+        height: 100%
+
     .product-card__wrapper
         +flex
         +flex-direction(column)
@@ -357,6 +366,10 @@
 
         @include breakpoint(xxl)
             margin: 0 150px
+
+        .inner-container
+            +flex-direction(column)
+            +align-items(flex-start)
 
         .two-column-layout
             +flex

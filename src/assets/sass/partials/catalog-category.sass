@@ -11,9 +11,16 @@
     @include breakpoint(xxl)
       margin: 0 150px
 
-
     .title
       +font-24_bold
+
+  &__container
+    +flex
+    +flex-direction(column)
+    width: 100%
+    max-width: 1620px
+    margin: 0 auto
+    height: 100%
 
   &__item-row
     +flex

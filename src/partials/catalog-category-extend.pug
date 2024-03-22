@@ -1,8 +1,9 @@
 include ../components/catalog-item
 
 section.catalog-category.pt-5.pb-9.extended
-    .catalog-category__wrapper.gy-5
-        .title Популярные категории
-        .catalog-category__item-row.gy-5.gx-2
-            for item in catalogCategoriesExtended
-                +catalog-item("category-extend", item)
+    .catalog-category__wrapper
+        .catalog-category__container.gy-5
+            .title Популярные категории
+            .catalog-category__item-row.gy-5.gx-2
+                for item in catalogCategoriesExtended
+                    +catalog-item("category-extend", item)

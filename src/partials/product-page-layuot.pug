@@ -7,253 +7,197 @@ include ../components/configurations
 
 section.product-page.pt-5.pb-9
     .product-card__wrapper.mb-9
-        .product-card.gx-10
-            .product-card__gallery-wrapper
-                .product-gallery.gy-5
-                    .large-img_wrapper
-                        img(src="img/gallery/gallery-img-01.png").large-img
-                    .thumbs-wrapper.ga-5
-                        each n in [1,2,3,4,5]
-                            .thumb-img-item
-                                img(src="img/gallery/gallery-img-0"+ n +".png").thumb-img
+        .inner-container
+            .product-card.gx-10
+                .product-card__gallery-wrapper
+                    .product-gallery.gy-5
+                        .large-img_wrapper
+                            img(src="img/gallery/gallery-img-01.png").large-img
+                        .thumbs-wrapper.ga-5
+                            each n in [1,2,3,4,5]
+                                .thumb-img-item
+                                    img(src="img/gallery/gallery-img-0"+ n +".png").thumb-img
 
-            .product-card__description-wrapper
-                .product.gy-5
-                    .product-title-wrapper.gx-5.mb-1
-                        .product-title Терминал сбора данных PointMobile PM67 PM67GPV23BJE0C
-                        .services-buttons.gx-2
-                            .services-buttons__button
-                                +icon('favorites', '32')
-                            .services-buttons__button
-                                +icon('compare', '32')
-                            .services-buttons__button
-                                .popup-button
-                                    +icon('share', '32')
-                                .popup-container.gy-3.pa-4.hidden
-                                    .item.gx-2
-                                        +icon('telegram-colored', '24')
-                                        | Telegram
-                                    .item.gx-2
-                                        +icon('whatsapp-colored', '24')
-                                        | WhatsApp
-                                    .item.gx-2
-                                        +icon('twitter-colored', '24')
-                                        | Twitter
-                                    .item.gx-2.mt-2
-                                        +icon('link-colored', '24')
-                                        | Скопировать ссылку
-
-
-                    .product-meta.gx-3
-                        .product-meta__vendor-code
-                            | Код товара
-                            span.code.ml-1 00001121
-                        .product-meta__raiting.gx-2
-                            .star
-                                +icon('star-active', '24')
-                            .star-value 4.5
-                            a(href="#reviews").scroll-button 2 Отзыва
-                        a(href="#").product-meta__print.gx-2
-                            | Печать
-                            +icon('print', '32')
-
-                    #tabs.tabs
-                        nav.tabs__header.gx-3
-                            a.tabs__title.pb-3(href='#') Конфигурация
-                            a.tabs__title.pb-3(href='#') Доставка
-                            a.tabs__title.pb-3(href='#') Оплата
-                        .tabs__content.py-4
-                            | Android 11, экран 4,3", 3ГБ/32ГБ, аккумулятор 4200 mAh, камера 8 МП, Bluetooth, NFC, WiFi, 24 клавиши, LTE/GPS, 2D Imager сканер N3601, STD
-                        .tabs__content.py-4
-                            | asd
-                        .tabs__content.py-4
-                            | zxc
-
-                    .product-links.gy-2
-                        +arrow-link('#characteristics', 'Все характеристики', 'scroll-button', 'arrow')
-                        +arrow-link('#accessories', 'Аксессуары', 'scroll-button', 'arrow')
-
-                    .buy-action-area.gx-5
-                        .buy-action-area__price
-                            .num 67 870&nbsp;&#8381;
-                            .text Цена с НДС
-                        .buy-action-area__button-wrapper.gx-5
-                            +button("button", "Купить")
-
-                            include ../components/quantity
-
-                        a(href="#").buy-action-area__link Купить в 1 клик
-                        a(href="#").buy-action-area__link Взять на тест
+                .product-card__description-wrapper
+                    .product.gy-5
+                        .product-title-wrapper.gx-5.mb-1
+                            .product-title Терминал сбора данных PointMobile PM67 PM67GPV23BJE0C
+                            .services-buttons.gx-2
+                                .services-buttons__button
+                                    +icon('favorites', '32')
+                                .services-buttons__button
+                                    +icon('compare', '32')
+                                .services-buttons__button
+                                    .popup-button
+                                        +icon('share', '32')
+                                    .popup-container.gy-3.pa-4.hidden
+                                        .item.gx-2
+                                            +icon('telegram-colored', '24')
+                                            | Telegram
+                                        .item.gx-2
+                                            +icon('whatsapp-colored', '24')
+                                            | WhatsApp
+                                        .item.gx-2
+                                            +icon('twitter-colored', '24')
+                                            | Twitter
+                                        .item.gx-2.mt-2
+                                            +icon('link-colored', '24')
+                                            | Скопировать ссылку
 
 
-                    .configuration-wrapper.gy-4
-                        +configuration('short', configShortData)
+                        .product-meta.gx-3
+                            .product-meta__vendor-code
+                                | Код товара
+                                span.code.ml-1 00001121
+                            .product-meta__raiting.gx-2
+                                .star
+                                    +icon('star-active', '24')
+                                .star-value 4.5
+                                a(href="#reviews").scroll-button 2 Отзыва
+                            a(href="#").product-meta__print.gx-2
+                                | Печать
+                                +icon('print', '32')
 
-                        .configuration-wrapper__link
-                            +arrow-link('#configuration', 'Все конфигурации', 'scroll-button accent', 'arrow')
+                        #tabs.tabs
+                            nav.tabs__header.gx-3
+                                a.tabs__title.pb-3(href='#') Конфигурация
+                                a.tabs__title.pb-3(href='#') Доставка
+                                a.tabs__title.pb-3(href='#') Оплата
+                            .tabs__content.py-4
+                                | Android 11, экран 4,3", 3ГБ/32ГБ, аккумулятор 4200 mAh, камера 8 МП, Bluetooth, NFC, WiFi, 24 клавиши, LTE/GPS, 2D Imager сканер N3601, STD
+                            .tabs__content.py-4
+                                | asd
+                            .tabs__content.py-4
+                                | zxc
 
-                    .relevant-files.bordered.colored.py-5.expand-wrapper
-                        .title.px-5.mb-4 Полезные файлы
-                        .relevant-files__list.expand-container
-                            a(href="" target="_blank").relevant-files__list-item.px-5.py-3.gx-3
-                                .ext pdf
-                                .caption Инструкция по эксплуатации PM67
-                                .size 269 kb
-                                +icon('download', '24')
+                        .product-links.gy-2
+                            +arrow-link('#characteristics', 'Все характеристики', 'scroll-button', 'arrow')
+                            +arrow-link('#accessories', 'Аксессуары', 'scroll-button', 'arrow')
 
-                            a(href="" target="_blank").relevant-files__list-item.px-5.py-3.gx-3
-                                .ext pdf
-                                .caption Case pm67
-                                .size 269 kb
-                                +icon('download', '24')
+                        .buy-action-area.gx-5
+                            .buy-action-area__price
+                                .num 67 870&nbsp;&#8381;
+                                .text Цена с НДС
+                            .buy-action-area__button-wrapper.gx-5
+                                +button("button", "Купить")
 
-                            a(href="" target="_blank").relevant-files__list-item.px-5.py-3.gx-3
-                                .ext pdf
-                                .caption PM67 Data Cheet 67
-                                .size 269 kb
-                                +icon('download', '24')
+                                include ../components/quantity
 
-                            a(href="" target="_blank").relevant-files__list-item.px-5.py-3.gx-3
-                                .ext pdf
-                                .caption Sertificate
-                                .size 269 kb
-                                +icon('download', '24')
+                            a(href="#").buy-action-area__link Купить в 1 клик
+                            a(href="#").buy-action-area__link Взять на тест
 
-                            a(href="" target="_blank").relevant-files__list-item.px-5.py-3.gx-3
-                                .ext pdf
-                                .caption Инструкция по эксплуатации PM67
-                                .size 269 kb
-                                +icon('download', '24')
 
-                            a(href="" target="_blank").relevant-files__list-item.px-5.py-3.gx-3
-                                .ext pdf
-                                .caption Case pm67
-                                .size 269 kb
-                                +icon('download', '24')
+                        .configuration-wrapper.gy-4
+                            +configuration('short', configShortData)
 
-                            a(href="" target="_blank").relevant-files__list-item.px-5.py-3.gx-3
-                                .ext pdf
-                                .caption PM67 Data Cheet 67
-                                .size 269 kb
-                                +icon('download', '24')
+                            .configuration-wrapper__link
+                                +arrow-link('#configuration', 'Все конфигурации', 'scroll-button accent', 'arrow')
 
-                            a(href="" target="_blank").relevant-files__list-item.px-5.py-3.gx-3
-                                .ext pdf
-                                .caption Sertificate
-                                .size 269 kb
-                                +icon('download', '24')
+                        .relevant-files.bordered.colored.py-5.expand-wrapper
+                            .title.px-5.mb-4 Полезные файлы
+                            .relevant-files__list.expand-container
+                                a(href="" target="_blank").relevant-files__list-item.px-5.py-3.gx-3
+                                    .ext pdf
+                                    .caption Инструкция по эксплуатации PM67
+                                    .size 269 kb
+                                    +icon('download', '24')
 
-                        .button__wrapper.colored
-                            +expand-link('Развернуть')
+                                a(href="" target="_blank").relevant-files__list-item.px-5.py-3.gx-3
+                                    .ext pdf
+                                    .caption Case pm67
+                                    .size 269 kb
+                                    +icon('download', '24')
 
-                    .info-block.bordered.pa-5.gy-3
-                        .title Мы хотим, чтобы вы знали
-                        .text Пространственное аудио доступно клиентам Amazon Music Unlimited без дополнительной платы. Для захватывающего домашнего кинотеатра вы можете использовать Echo Studio с Fire TV Cube 1st Gen или 2nd Gen , Fire TV Stick 4K , Fire TV (3rd Gen) , Fire TV Omni Series .
+                                a(href="" target="_blank").relevant-files__list-item.px-5.py-3.gx-3
+                                    .ext pdf
+                                    .caption PM67 Data Cheet 67
+                                    .size 269 kb
+                                    +icon('download', '24')
 
-                    .recomendation.bordered.pa-5.gy-4
-                        .title Рекомендуемое ПО
-                        .images-wrapper.gx-5
-                            img(src="img/catalog/recom-soft-01.png")
-                            img(src="img/catalog/recom-soft-02.png")
-                            img(src="img/catalog/recom-soft-03.png")
+                                a(href="" target="_blank").relevant-files__list-item.px-5.py-3.gx-3
+                                    .ext pdf
+                                    .caption Sertificate
+                                    .size 269 kb
+                                    +icon('download', '24')
+
+                                a(href="" target="_blank").relevant-files__list-item.px-5.py-3.gx-3
+                                    .ext pdf
+                                    .caption Инструкция по эксплуатации PM67
+                                    .size 269 kb
+                                    +icon('download', '24')
+
+                                a(href="" target="_blank").relevant-files__list-item.px-5.py-3.gx-3
+                                    .ext pdf
+                                    .caption Case pm67
+                                    .size 269 kb
+                                    +icon('download', '24')
+
+                                a(href="" target="_blank").relevant-files__list-item.px-5.py-3.gx-3
+                                    .ext pdf
+                                    .caption PM67 Data Cheet 67
+                                    .size 269 kb
+                                    +icon('download', '24')
+
+                                a(href="" target="_blank").relevant-files__list-item.px-5.py-3.gx-3
+                                    .ext pdf
+                                    .caption Sertificate
+                                    .size 269 kb
+                                    +icon('download', '24')
+
+                            .button__wrapper.colored
+                                +expand-link('Развернуть')
+
+                        .info-block.bordered.pa-5.gy-3
+                            .title Мы хотим, чтобы вы знали
+                            .text Пространственное аудио доступно клиентам Amazon Music Unlimited без дополнительной платы. Для захватывающего домашнего кинотеатра вы можете использовать Echo Studio с Fire TV Cube 1st Gen или 2nd Gen , Fire TV Stick 4K , Fire TV (3rd Gen) , Fire TV Omni Series .
+
+                        .recomendation.bordered.pa-5.gy-4
+                            .title Рекомендуемое ПО
+                            .images-wrapper.gx-5
+                                img(src="img/catalog/recom-soft-01.png")
+                                img(src="img/catalog/recom-soft-02.png")
+                                img(src="img/catalog/recom-soft-03.png")
 
     .product-pane
-        .product-pane__wrapper.gx-3
-            .img
-                img(src="img/catalog/product-large.png").item__goTop
-            .title Терминал сбора данных PointMobile PM67 PM67GPV23BJE0C
-            .price 67 870 &#8381;
-            +button("button", "Купить", "medium")
+        .product-pane__wrapper
+            .inner-container.gx-3
+                .img
+                    img(src="img/catalog/product-large.png").item__goTop
+                .title Терминал сбора данных PointMobile PM67 PM67GPV23BJE0C
+                .price 67 870 &#8381;
+                +button("button", "Купить", "medium")
 
 
 
     #middleNav.middle-nav__wrapper.mb-7
-        nav.middle-nav.gx-7
-            a(href="#about").middle-nav__link.scroll-button О товаре
-            a(href="#characteristics").middle-nav__link.scroll-button Характеристики
-            a(href="#soft").middle-nav__link.scroll-button Софт
-            a(href="#configuration").middle-nav__link.scroll-button Конфигурации
-            a(href="#accessories").middle-nav__link.scroll-button Аксессуары
-            a(href="#services").middle-nav__link.scroll-button Услуги
-            a(href="#reviews").middle-nav__link.scroll-button Отзывы
+        nav.middle-nav
+            .inner-container.gx-7
+                a(href="#about").middle-nav__link.scroll-button О товаре
+                a(href="#characteristics").middle-nav__link.scroll-button Характеристики
+                a(href="#soft").middle-nav__link.scroll-button Софт
+                a(href="#configuration").middle-nav__link.scroll-button Конфигурации
+                a(href="#accessories").middle-nav__link.scroll-button Аксессуары
+                a(href="#services").middle-nav__link.scroll-button Услуги
+                a(href="#reviews").middle-nav__link.scroll-button Отзывы
 
-    .product-description.gy-10
-        .two-column-layout.gx-10
-            .two-column-layout__left.gy-3
-                .product-description__block.bordered.pa-7.scroll-container#about
-                    .title.mb-5 О товаре
-                    .text.expand-container.mb-4.gy-3
-                        span PM67 – это защищенный мобильный компьютер на базе Android, который выглядит почти идентично PM66, своему предшественнику и вдохновителю. Высокофункциональный форм-фактор доказал свою мощь и универсальность во многих областях применения, включая транспорт и логистику. PM67-это защищенный мобильный компьютер на базе Android, который выглядит почти идентично PM66, своему предшественнику и вдохновителю. Высокофункциональный форм-фактор доказал свою мощь и универсальность во многих областях применения, включая транспорт и логистику.
-                        span PM67 – это защищенный мобильный компьютер на базе Android, который выглядит почти идентично PM66, своему предшественнику и вдохновителю. Высокофункциональный форм-фактор доказал свою мощь и универсальность во многих областях применения, включая транспорт и логистику. PM67-это защищенный мобильный компьютер на базе Android, который выглядит почти идентично PM66, своему предшественнику и вдохновителю. Высокофункциональный форм-фактор доказал свою мощь и универсальность во многих областях применения, включая транспорт и логистику.
+    .product-description
+        .inner-container.gy-10
+            .two-column-layout.gx-10
+                .two-column-layout__left.gy-3
+                    .product-description__block.bordered.pa-7.scroll-container#about
+                        .title.mb-5 О товаре
+                        .text.expand-container.mb-4.gy-3
+                            span PM67 – это защищенный мобильный компьютер на базе Android, который выглядит почти идентично PM66, своему предшественнику и вдохновителю. Высокофункциональный форм-фактор доказал свою мощь и универсальность во многих областях применения, включая транспорт и логистику. PM67-это защищенный мобильный компьютер на базе Android, который выглядит почти идентично PM66, своему предшественнику и вдохновителю. Высокофункциональный форм-фактор доказал свою мощь и универсальность во многих областях применения, включая транспорт и логистику.
+                            span PM67 – это защищенный мобильный компьютер на базе Android, который выглядит почти идентично PM66, своему предшественнику и вдохновителю. Высокофункциональный форм-фактор доказал свою мощь и универсальность во многих областях применения, включая транспорт и логистику. PM67-это защищенный мобильный компьютер на базе Android, который выглядит почти идентично PM66, своему предшественнику и вдохновителю. Высокофункциональный форм-фактор доказал свою мощь и универсальность во многих областях применения, включая транспорт и логистику.
 
-                    +expand-link('Развернуть')
+                        +expand-link('Развернуть')
 
-                .product-description__block.bordered.pa-7.scroll-container#characteristics
-                    .title.mb-5 Характеристики
+                    .product-description__block.bordered.pa-7.scroll-container#characteristics
+                        .title.mb-5 Характеристики
 
-                    .accordion.expand-container.mb-4
-                        .accordion__item
-                            .caption.mb-5 Характеристики производительности
-                                +icon('arrow', '24')
-                            .content.mb-5
-                                .content__wrapper.pb-5
-                                    .characteristics.gy-4
-                                        .characteristics__row
-                                            .characteristics__column Производитель
-                                            .characteristics__column
-                                                a(href="#").characteristics__link PointMobile
-
-                                        .characteristics__row
-                                            .characteristics__column Операционная система
-                                            .characteristics__column Android 11 (upgradeable to Android 14)
-
-                                        .characteristics__row
-                                            .characteristics__column Основной процессор
-                                            .characteristics__column Qualcomm® Octa-core @2.0GHz
-
-                                        .characteristics__row
-                                            .characteristics__column Аккумулятор
-                                            .characteristics__column 3.85Вт, 4200 мАч л.-ион перезаряжаемый
-
-                                        .characteristics__row
-                                            .characteristics__column Время зарядки
-                                            .characteristics__column 3 часа
-
-                                        .characteristics__row
-                                            .characteristics__column Время работы
-                                            .characteristics__column 24 часа
-                        .accordion__item
-                            .caption.mb-5 Камера
-                                +icon('arrow', '24')
-                            .content.mb-5
-                                .content__wrapper.pb-5
-                                    .characteristics.gy-4
-                                        .characteristics__row
-                                            .characteristics__column Основная камера
-                                            .characteristics__column 8 МП с LED-вспышкой
-
-                                        .characteristics__row
-                                            .characteristics__column Фронтальная камера
-                                            .characteristics__column 8 МП с LED-вспышкой
-
-                                        .characteristics__row
-                                            .characteristics__column Основной процессор
-                                            .characteristics__column Qualcomm® Octa-core @2.0GHz
-
-                                        .characteristics__row
-                                            .characteristics__column Аккумулятор
-                                            .characteristics__column 3.85Вт, 4200 мАч л.-ион перезаряжаемый
-
-                                        .characteristics__row
-                                            .characteristics__column Время зарядки
-                                            .characteristics__column 3 часа
-
-                                        .characteristics__row
-                                            .characteristics__column Время работы
-                                            .characteristics__column 24 часа
-                        each n in [1, 2, 3, 4, 5, 6, 7]
+                        .accordion.expand-container.mb-4
                             .accordion__item
-                                .caption.mb-5 Еще какие-нибудь характеристики
+                                .caption.mb-5 Характеристики производительности
                                     +icon('arrow', '24')
                                 .content.mb-5
                                     .content__wrapper.pb-5
@@ -282,80 +226,140 @@ section.product-page.pt-5.pb-9
                                             .characteristics__row
                                                 .characteristics__column Время работы
                                                 .characteristics__column 24 часа
+                            .accordion__item
+                                .caption.mb-5 Камера
+                                    +icon('arrow', '24')
+                                .content.mb-5
+                                    .content__wrapper.pb-5
+                                        .characteristics.gy-4
+                                            .characteristics__row
+                                                .characteristics__column Основная камера
+                                                .characteristics__column 8 МП с LED-вспышкой
+
+                                            .characteristics__row
+                                                .characteristics__column Фронтальная камера
+                                                .characteristics__column 8 МП с LED-вспышкой
+
+                                            .characteristics__row
+                                                .characteristics__column Основной процессор
+                                                .characteristics__column Qualcomm® Octa-core @2.0GHz
+
+                                            .characteristics__row
+                                                .characteristics__column Аккумулятор
+                                                .characteristics__column 3.85Вт, 4200 мАч л.-ион перезаряжаемый
+
+                                            .characteristics__row
+                                                .characteristics__column Время зарядки
+                                                .characteristics__column 3 часа
+
+                                            .characteristics__row
+                                                .characteristics__column Время работы
+                                                .characteristics__column 24 часа
+                            each n in [1, 2, 3, 4, 5, 6, 7]
+                                .accordion__item
+                                    .caption.mb-5 Еще какие-нибудь характеристики
+                                        +icon('arrow', '24')
+                                    .content.mb-5
+                                        .content__wrapper.pb-5
+                                            .characteristics.gy-4
+                                                .characteristics__row
+                                                    .characteristics__column Производитель
+                                                    .characteristics__column
+                                                        a(href="#").characteristics__link PointMobile
+
+                                                .characteristics__row
+                                                    .characteristics__column Операционная система
+                                                    .characteristics__column Android 11 (upgradeable to Android 14)
+
+                                                .characteristics__row
+                                                    .characteristics__column Основной процессор
+                                                    .characteristics__column Qualcomm® Octa-core @2.0GHz
+
+                                                .characteristics__row
+                                                    .characteristics__column Аккумулятор
+                                                    .characteristics__column 3.85Вт, 4200 мАч л.-ион перезаряжаемый
+
+                                                .characteristics__row
+                                                    .characteristics__column Время зарядки
+                                                    .characteristics__column 3 часа
+
+                                                .characteristics__row
+                                                    .characteristics__column Время работы
+                                                    .characteristics__column 24 часа
 
 
-                    +expand-link('Развернуть')
-            .two-column-layout__right
-                .product-description__sidebar.gy-7
-                    .product-description__sidebar__video-wrapper
-                        img(src="img/full-img-2.png")
-                        .play
-                            +icon("play-large", "104")
-                    .product-description__sidebar__info-block
-                        .logo-wrapper.mb-2.gx-3
-                            img(src="img/logo_vendor.png")
-                            +icon("info", "24")
-                        .notification.colored.pa-3.mb-4 Комплектация товара может быть изменена производителем без предварительного уведомления
+                        +expand-link('Развернуть')
+                .two-column-layout__right
+                    .product-description__sidebar.gy-7
+                        .product-description__sidebar__video-wrapper
+                            img(src="img/full-img-2.png")
+                            .play
+                                +icon("play-large", "104")
+                        .product-description__sidebar__info-block
+                            .logo-wrapper.mb-2.gx-3
+                                img(src="img/logo_vendor.png")
+                                +icon("info", "24")
+                            .notification.colored.pa-3.mb-4 Комплектация товара может быть изменена производителем без предварительного уведомления
 
-                        .text.pa-3 ТСД PM67 PM67GPV23BJE0C, USB кабель, инструкция производителя
-                        .divider
+                            .text.pa-3 ТСД PM67 PM67GPV23BJE0C, USB кабель, инструкция производителя
+                            .divider
 
-                        .text.pa-3
-                            .title.mb-3 Приобретается отдельно:
-                            ul.product-description__list
-                                li.product-description__list-item.mb-2 Зарядная станция 1 слот
-                                li.product-description__list-item.mb-2 Программное обеспечение
-                                li.product-description__list-item.mb-2 Кредл
+                            .text.pa-3
+                                .title.mb-3 Приобретается отдельно:
+                                ul.product-description__list
+                                    li.product-description__list-item.mb-2 Зарядная станция 1 слот
+                                    li.product-description__list-item.mb-2 Программное обеспечение
+                                    li.product-description__list-item.mb-2 Кредл
 
-                            +button("button", "Добавить в коробку", "medium outlined")
+                                +button("button", "Добавить в коробку", "medium outlined")
 
-                        .text.pa-3
-                            .title.mb-3 Гарантия и поддержка
-                            span Гарантия производителя 1 год
+                            .text.pa-3
+                                .title.mb-3 Гарантия и поддержка
+                                span Гарантия производителя 1 год
 
-                            +button("button", "Сервисный контракт", "medium outlined")
+                                +button("button", "Сервисный контракт", "medium outlined")
 
-        .tabs.scroll-container#soft
-            nav.tabs__header.gx-3
-                a.tabs__title.pb-3(href='#') Поддерживаемое ПО
-                a.tabs__title.pb-3(href='#') Рекомендуемое ПО
-                a.tabs__title.pb-3(href='#') Разработка ПО
-            .tabs__content.py-4
-                .tabs__content__row.gx-2
-                    .tabs__content__column-left
-                        include ../partials/supported-software
-                    .tabs__content__column-right
-                        +subcategories(softCategories)
+            .tabs.scroll-container#soft
+                nav.tabs__header.gx-3
+                    a.tabs__title.pb-3(href='#') Поддерживаемое ПО
+                    a.tabs__title.pb-3(href='#') Рекомендуемое ПО
+                    a.tabs__title.pb-3(href='#') Разработка ПО
+                .tabs__content.py-4
+                    .tabs__content__row.gx-2
+                        .tabs__content__column-left
+                            include ../partials/supported-software
+                        .tabs__content__column-right
+                            +subcategories(softCategories)
 
-            .tabs__content.py-4
-                | Рекомендуемое ПО
-            .tabs__content.py-4
-                | Разработка ПО
+                .tabs__content.py-4
+                    | Рекомендуемое ПО
+                .tabs__content.py-4
+                    | Разработка ПО
 
-        .accessories.scroll-container#accessories
-            .accessories__row.gx-2
-                .accessories__column-left
-                    include ../partials/accessories-section
-                .accessories__column-right.pt-9
-                    +subcategories(accessoriesCategories)
+            .accessories.scroll-container#accessories
+                .accessories__row.gx-2
+                    .accessories__column-left
+                        include ../partials/accessories-section
+                    .accessories__column-right.pt-9
+                        +subcategories(accessoriesCategories)
 
-        .configuration-product.scroll-container#configuration
-            include ../partials/configuration-section
+            .configuration-product.scroll-container#configuration
+                include ../partials/configuration-section
 
-        .services-product.scroll-container#services
-            include ../partials/services-product
+            .services-product.scroll-container#services
+                include ../partials/services-product
 
-        .reviews-section#reviews
-            include ../partials/reviews-section
+            .reviews-section#reviews
+                include ../partials/reviews-section
 
-        .similar-section
-            include ../partials/similar-section
+            .similar-section
+                include ../partials/similar-section
 
-        .news-section
-            include ../partials/news-section
+            .news-section
+                include ../partials/news-section
 
-        .buywith-section
-            include ../partials/buywith-section
+            .buywith-section
+                include ../partials/buywith-section
 
-        .recent-section
-            include ../partials/recent-section
+            .recent-section
+                include ../partials/recent-section
