@@ -13,12 +13,14 @@
     .product-card__wrapper
         +flex
         +flex-direction(column)
-
-        @include breakpoint(xl)
-            margin: 0 80px
+        margin: 0 80px
 
         @include breakpoint(xxl)
             margin: 0 150px
+        @include breakpoint(xl)
+            margin: 0 80px
+
+
 
         .product-card
             +flex
@@ -293,12 +295,14 @@
             +align-items(center)
 
             width: 100%
-
-            @include breakpoint(xl)
             margin: 0 80px
 
             @include breakpoint(xxl)
                 margin: 0 150px
+            @include breakpoint(xl)
+                margin: 0 80px
+
+
 
             .img
                 width: 48px
@@ -336,6 +340,7 @@
             +flex-direction(row)
             +align-items(center)
             height: 92px
+            margin: 0 80px
 
             &__link
                 +flex
@@ -350,22 +355,25 @@
                     color: $accent-color
                     border-bottom-color: $accent-color
 
+            @include breakpoint(xxl)
+                margin: 0 150px
             @include breakpoint(xl)
                 margin: 0 80px
 
-            @include breakpoint(xxl)
-                margin: 0 150px
+
 
 
     .product-description
         +flex
         +flex-direction(column)
-
-        @include breakpoint(xl)
-            margin: 0 80px
+        margin: 0 80px
 
         @include breakpoint(xxl)
             margin: 0 150px
+        @include breakpoint(xl)
+            margin: 0 80px
+
+
 
         .inner-container
             +flex-direction(column)
@@ -382,7 +390,7 @@
                 width: 100%
 
             &__right
-
+                max-width: 318px
                 @include breakpoint(xl)
                     max-width: 250px
                 @include breakpoint(xxl)
@@ -523,6 +531,7 @@
             &-right
                 +flex
                 +flex-direction(column)
+                max-width: 318px
 
                 @include breakpoint(xl)
                     max-width: 250px

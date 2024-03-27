@@ -51,7 +51,7 @@
 		@content
 	@keyframes #{$name}
 		@content
-		
+
 =scrollable($thumb-background: $accent-color, $track-background: transparent, $corner-background: transparent, $scrollbar-width: 10px, $scrollbar-height: 10px, $scrollbar-margin: 5px)
 	overflow: auto
 	&::-webkit-scrollbar
@@ -66,29 +66,29 @@
 		border-radius: 20px
 	&::-webkit-scrollbar-corner
 		background: $corner-background
-		
+
 =breakpoint($point)
 	@if $point == xxl //1920px
-		@media(min-width:$xxl)
+		@media(max-width:$xxl)
 			@content
-	
+
 	@if $point == xl //1440px
-		@media(min-width:$xl)
+		@media(max-width:$xl)
 			@content
-	
+
 	@if $point == lg //1024px
-		@media(min-width:$lg)
+		@media(max-width:$lg)
 			@content
 
 	@else if $point == md //768px
-		@media(min-width:$md)
+		@media(max-width:$md)
 			@content
-	
+
 	@else if $point == sm //720px
-		@media(min-width:$sm)
+		@media(max-width:$sm)
 			@content
-	
+
 	@else if $point == xs //320px
-		@media(min-width:$xs)
+		@media(max-width:$xs)
 			@content
 
