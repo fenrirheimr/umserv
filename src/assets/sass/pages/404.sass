@@ -1,0 +1,68 @@
+.not-found
+    background: $white-color
+
+    &__wrapper
+        +flex
+        +flex-direction(column)
+        +justify-content(center)
+        +align-items(center)
+        margin: 0 80px
+
+        @include breakpoint(xxl)
+            margin: 0 150px
+        @include breakpoint(xl)
+            margin: 0 80px
+
+        .title
+            +font-24_bold
+
+    &__content
+        +flex
+        +flex-direction(column)
+        text-align: center
+        .arrow-link-wrapper
+            width: fit-content
+            margin: 0 auto
+
+    &__form-wrapper
+        background: $bg-light-color
+        border-radius: 16px
+        .form
+            +flex
+            +flex-direction(column)
+            width: 660px
+
+            .caption
+                +font-20-bold
+
+            &-fields-wrapper
+                +flex
+                +flex-direction(row)
+                position: relative
+
+                & > div
+                    width: 50%
+                    border-radius: 45px
+                    button
+                        width: 100%
+                        min-width: 50%
+                        padding: 0 !important
+                .error-message
+                    +font-12-light
+                    color: $alert-color
+                    width: 100%
+                    position: absolute
+                    top: 100%
+
+
+            &-description
+                +font-14-medium
+            &-checkbox-wrapper
+                +flex
+                +flex-direction(row)
+                +align-items(flex-start)
+                .label
+                    +font-14-medium
+                    max-width: 360px
+                    a
+                        color: $accent-color

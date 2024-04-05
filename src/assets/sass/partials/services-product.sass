@@ -12,6 +12,10 @@
         max-height: 255px
         gap: 7px
         overflow: hidden
+        @include breakpoint(xxl)
+            max-height: 255px
+        @include breakpoint(xl)
+            max-height: 205px
 
         &__button-wrapper
             +flex

@@ -8,18 +8,18 @@
     position: relative
     width: 100%
     max-width: 318px
-    @include breakpoint(xl)
-        max-width: 250px
     @include breakpoint(xxl)
         max-width: 318px
+    @include breakpoint(xl)
+        max-width: 250px
     &:hover
         box-shadow: 1px 1px 5px 0 rgba(156, 180, 186, 0.83)
 
     &__title
-        @include breakpoint(xl)
-            +font-16-medium
         @include breakpoint(xxl)
             +font-16-bold
+        @include breakpoint(xl)
+            +font-16-medium
     &__vendor-code
         +font-16-medium
         white-space: nowrap

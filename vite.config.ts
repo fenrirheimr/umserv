@@ -11,6 +11,7 @@ export default defineConfig({
         page: path.resolve(__dirname, 'catalog.html'),
         page2: path.resolve(__dirname, 'catalog-page.html'),
         page3: path.resolve(__dirname, 'product-page.html'),
+        page4: path.resolve(__dirname, '404.html'),
       },
       output: {
         // inlineDynamicImports: true,
@@ -32,6 +33,7 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       sass: {
+        // additionalData: `@import './src/assets/sass/main.sass'`,
       },
     },
   },

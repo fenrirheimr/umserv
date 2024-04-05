@@ -1,0 +1,29 @@
+- const catalogBreadcrumbs = [{"url": "/catalog.html", "title": "Каталог"}]
+
+include ../components/breadcrumbs.pug
+include ../components/arrow-link
+include ../components/input-field
+include ../components/checkbox
+include ../components/button
+
++breadcrumbs("catalog-page", catalogBreadcrumbs)
+
+section.not-found.pt-5.pb-9
+    .not-found__wrapper
+        .title.mb-3 Страница не найдена
+        .not-found__content.gy-3
+            span
+                | Воспользуйтесь
+                | &nbsp;
+                a(href="#") каталогом
+                |  или перейдите на главную страницу
+            +arrow-link('/', 'На главную')
+
+        .not-found__form-wrapper.mt-7.pa-5
+            form(method="" action="").form.gy-3
+                .caption Есть вопрос? Оставьте заявку на консультацию
+                .form-fields-wrapper.gx-3
+                    +input-field("tel", 'Телефон *', '', 'required', '[8]{1}[0-9]{3}[0-9]{3}[0-9]{4}')
+                    .error-message.hidden
+                    +button("button", "Заказать звонок")
+
